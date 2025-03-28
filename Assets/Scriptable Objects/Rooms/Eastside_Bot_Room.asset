@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0598d41b25cc5ec4daf6ec412812ca84, type: 3}
+  m_Name: Eastside_Bot_Room
+  m_EditorClassIdentifier: 
+  backgroundImage: {fileID: 21300000, guid: 4f7e4f0333fc6f14c88ed2bff0990f17, type: 3}
+  hasChizzy: 0
+  forwardRoom: {fileID: 0}
+  rightRoom: {fileID: 11400000, guid: 6ac614fcb19d9c2479cd6e9cde7713a4, type: 2}
+  backRoom: {fileID: 11400000, guid: 1d459261524562c4086247c4d4641e0e, type: 2}
+  leftRoom: {fileID: 11400000, guid: 1a828f90d7aa27e408d05b02511bc613, type: 2}
