@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
-  direction: 0
+  direction: 2
 --- !u!1 &910639636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 910639638}
   - component: {fileID: 910639637}
+  - component: {fileID: 910639639}
   m_Layer: 0
   m_Name: Game_Manager
   m_TagString: Untagged
@@ -1062,6 +1063,7 @@ MonoBehaviour:
   startRoom: {fileID: 11400000, guid: 1ad27b0c83f24c944b90561fba3b5d6c, type: 2}
   dialogRoom: {fileID: 11400000, guid: f928cb3f64757b04a94efc27b634bdd6, type: 2}
   backgroundImage: {fileID: 1558172732}
+  compass: {fileID: 1022146615}
   chizzyButton: {fileID: 795636448}
   forwardButton: {fileID: 278638569}
   rightButton: {fileID: 245896911}
@@ -1082,6 +1084,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &910639639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910639636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d499ab38f322848b10c344107d095d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chizzy: {fileID: 11400000, guid: 55d8c5b2ad4d04c4a80149fa7fd8d030, type: 2}
+  chizzyImage: {fileID: 983731888}
+  dialogBox: {fileID: 1730478317}
+  dialogText: {fileID: 476740819}
 --- !u!1 &958369220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1133,7 @@ RectTransform:
   - {fileID: 245896912}
   - {fileID: 556577448}
   - {fileID: 1807848441}
+  - {fileID: 1022146616}
   m_Father: {fileID: 210049467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1179,7 +1198,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c4216a0f591f6c441b2e085ebfa45a99, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ce6b79f9285de5e4ea75ef273355e0e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1197,6 +1216,99 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983731886}
   m_CullTransparentMesh: 1
+--- !u!1 &1022146615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1022146616}
+  - component: {fileID: 1022146618}
+  - component: {fileID: 1022146617}
+  - component: {fileID: 1022146619}
+  m_Layer: 5
+  m_Name: Compass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1022146616
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022146615}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 958369221}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1022146617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022146615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1022146618
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022146615}
+  m_CullTransparentMesh: 1
+--- !u!114 &1022146619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022146615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c56180a57a6894e844a9728cff3c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compassImage: {fileID: 1022146617}
+  compNorth: {fileID: 21300000, guid: 019f911219b9dca4c950f42120b89b55, type: 3}
+  compEast: {fileID: 21300000, guid: 4b0c5f1447be91a428cd9207308bac24, type: 3}
+  compSouth: {fileID: 21300000, guid: 1441c5cc6a2151f408a04e7dd377c3cc, type: 3}
+  compWest: {fileID: 21300000, guid: 53f66b9498361a64182f84e878ca141d, type: 3}
 --- !u!1 &1558172730
 GameObject:
   m_ObjectHideFlags: 0

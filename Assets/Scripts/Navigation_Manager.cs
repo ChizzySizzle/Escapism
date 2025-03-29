@@ -11,11 +11,13 @@ public class Navigation_Manager : MonoBehaviour
     public Room startRoom;
     public Room dialogRoom;
     public Image backgroundImage;
+    public GameObject compass;
     public GameObject chizzyButton;
     public GameObject forwardButton;
     public GameObject rightButton;
     public GameObject backButton;
     public GameObject leftButton;
+    private Compass_Controller compassController;
     
     void Awake()
     {
@@ -30,6 +32,8 @@ public class Navigation_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        compassController = compass.GetComponent<Compass_Controller>();
+
         currentRoom = startRoom;
         Unpack();
     }
@@ -45,11 +49,18 @@ public class Navigation_Manager : MonoBehaviour
         backgroundImage.sprite = currentRoom.backgroundImage;
 
         if (currentRoom == dialogRoom) {
-            
+            Dialog_Manager.instance.BeginDialog();
+            compass.SetActive(false);
         }
+
+        compassController.UpdateCompass();
     }
 
     public void SwitchRooms(Direction_Button_Controller.Direction dir) {
+        if (currentRoom == dialogRoom) {
+            Dialog_Manager.instance.EndDialog();
+            compass.SetActive(true);
+        }
         if (dir == Direction_Button_Controller.Direction.Forward) {
             currentRoom = currentRoom.forwardRoom;
         }

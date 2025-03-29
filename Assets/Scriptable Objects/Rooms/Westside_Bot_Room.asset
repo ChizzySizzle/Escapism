@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0598d41b25cc5ec4daf6ec412812ca84, type: 3}
   m_Name: Westside_Bot_Room
   m_EditorClassIdentifier: 
+  facing: 2
   backgroundImage: {fileID: 21300000, guid: 2bf6264adad877b4aae0eb56d56b9956, type: 3}
   hasChizzy: 0
   forwardRoom: {fileID: 11400000, guid: f250dcaf2f8d73648a812864d3678aa0, type: 2}

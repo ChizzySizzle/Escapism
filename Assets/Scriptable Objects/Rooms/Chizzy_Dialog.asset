@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0598d41b25cc5ec4daf6ec412812ca84, type: 3}
   m_Name: Chizzy_Dialog
   m_EditorClassIdentifier: 
+  facing: 4
   backgroundImage: {fileID: 21300000, guid: b3403dff5f4340142a9496963d54d726, type: 3}
   hasChizzy: 0
   forwardRoom: {fileID: 11400000, guid: 1ad27b0c83f24c944b90561fba3b5d6c, type: 2}

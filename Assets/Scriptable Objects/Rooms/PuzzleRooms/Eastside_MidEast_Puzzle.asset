@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 770c7a2954be4704cbcdffc99c003fda, type: 3}
   m_Name: Eastside_MidEast_Puzzle
   m_EditorClassIdentifier: 
+  facing: 1
   backgroundImage: {fileID: 21300000, guid: 5313aa0cc95356349b3dfc508bb2899b, type: 3}
   hasChizzy: 0
   forwardRoom: {fileID: 0}
