@@ -33,23 +33,33 @@ public class Dialog_Manager : MonoBehaviour
     {
         dialogList.Clear();
         if (dialogList.Count == 0) {
-            LoadDialog();
             LoadEmotions();
         }
 
-        UpdateDialog(dialogDictionary["Introduction"]);
+        chizzy.currentEmotion = emotionDictionary["happy"];
+        chizzy.currentDialog = "Hello! Im Chizzy, Who are you?";
+        
+        GetUsername();
     } 
 
     public void BeginDialog() {
         chizzyImage.gameObject.SetActive(true);
         dialogBox.gameObject.SetActive(true);
 
-        UpdateChizEmotion();
+        UpdateEmotion();
         UpdateDialog(chizzy.currentDialog);
     }
 
     void UpdateDialog(string message) {
-        dialogText.text = message;
+        StartCoroutine(DialogTyper(message));
+    }
+
+    IEnumerator DialogTyper(string message) {
+        dialogText.text = "";
+        foreach (char c in message) {
+            dialogText.text += c;
+            yield return new WaitForSeconds(.1f);
+        }
         chizzy.currentDialog = dialogText.text;
     }
 
@@ -58,7 +68,7 @@ public class Dialog_Manager : MonoBehaviour
         dialogBox.gameObject.SetActive(false);
     }
 
-    void UpdateChizEmotion() {
+    void UpdateEmotion() {
         chizzyImage.sprite = chizzy.currentEmotion;
     }
 
@@ -74,25 +84,22 @@ public class Dialog_Manager : MonoBehaviour
         userInput.SetActive(true);
 
         TMP_InputField inputField = userInput.GetComponent<TMP_InputField>();
-        inputField.onEndEdit.AddListener(SetUsername);
+        inputField.onSubmit.AddListener(SetUsername);
     }
 
     void SetUsername(string username) {
         playerName = username;
 
         userInput.SetActive(false);
-        UpdateDialog(dialogDictionary["Greetings"]);
+        UpdateDialog($"Nice to meet you, {playerName}!!");
+
+        chizzy.currentEmotion = emotionDictionary["peace"];
+        UpdateEmotion();
+        
+        LoadDialog();
     }
 
     void LoadDialog() {
-        string introDialog = "Hello! Im Chizzy, Who are you?";
-        dialogList.Add(introDialog);
-        dialogDictionary.Add("Introduction", introDialog);
-
-        GetUsername();
-
-        string greetings = $"Nice to meet you, {playerName}!!";
-        dialogList.Add(introDialog);
-        dialogDictionary.Add("Greetings", greetings);
+        Debug.Log("Loading Dialog File");
     }
 }

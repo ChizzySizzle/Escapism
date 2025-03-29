@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chizzy
   m_EditorClassIdentifier: 
   currentEmotion: {fileID: 21300000, guid: ce6b79f9285de5e4ea75ef273355e0e2, type: 3}
-  currentDialog: Hello! Im Chizzy, Who are you?
+  currentDialog: 
   Emotions:
   - {fileID: 21300000, guid: ce6b79f9285de5e4ea75ef273355e0e2, type: 3}
   - {fileID: 21300000, guid: c4216a0f591f6c441b2e085ebfa45a99, type: 3}

@@ -11,6 +11,8 @@ public class Puzzle_Button_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.GetComponent<Image>().alphaHitTestMinimumThreshold = 0.1f;
+        
         puzzleButton = GetComponent<Button>();
         
         puzzleButton.onClick.AddListener(OnButtonClick);

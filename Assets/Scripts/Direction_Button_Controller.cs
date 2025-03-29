@@ -12,6 +12,8 @@ public class Direction_Button_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.GetComponent<Image>().alphaHitTestMinimumThreshold = 0.1f;
+        
         button = GetComponent<Button>();
 
         button.onClick.AddListener(OnButtonClicked);
