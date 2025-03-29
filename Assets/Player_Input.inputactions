@@ -1,0 +1,46 @@
+{
+    "name": "Player_Input",
+    "maps": [
+        {
+            "name": "Keyboard",
+            "id": "4fcf6f30-cb4c-4379-8944-9b664cc6a1ce",
+            "actions": [
+                {
+                    "name": "Spacebar",
+                    "type": "Button",
+                    "id": "8526a6ca-9822-4e86-9a41-6b2eb3614a32",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c1aaa58e-7f48-431b-a49a-a296c3a73a87",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Spacebar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

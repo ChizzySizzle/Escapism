@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements.Experimental;
+using UnityEngine.InputSystem;
+using System.IO;
+using Unity.VisualScripting;
 
 public class Dialog_Manager : MonoBehaviour
 {
@@ -14,11 +15,14 @@ public class Dialog_Manager : MonoBehaviour
     public Image dialogBox;
     public TMP_Text dialogText;
     public GameObject userInput;
+    public TextAsset dialogTextFile;
 
     private string playerName;
+    private bool cont;
+    private bool hasName;
+    private bool messageFull;
     private List<string> dialogList = new List<string>();
-    private Dictionary<string, string> dialogDictionary = new Dictionary<string,string>();
-    private List<Sprite> emotionList = new List<Sprite>();
+    private Dictionary<string, string[]> dialogDictionary = new Dictionary<string,string[]>();
     private Dictionary<string, Sprite> emotionDictionary = new Dictionary<string,Sprite>();
 
     void Awake()
@@ -29,43 +33,119 @@ public class Dialog_Manager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    IEnumerator IntroDialog() {
+
+        cont = false;
+        chizzy.currentEmotion = emotionDictionary["concerned"];
+        UpdateEmotion();
+
+        chizzy.currentDialog = "(Press space for dialog)";
+        UpdateDialog();
+
+        while (!cont || !messageFull) {
+            yield return null;
+        }
+
+        cont = false;
+        chizzy.currentEmotion = emotionDictionary["happy"];
+        UpdateEmotion();
+
+        chizzy.currentDialog = "Hello! Im Chizzy, Who are you?";
+        UpdateDialog();
+
+        GetUsername();
+
+        while (!cont || !hasName || !messageFull) {
+            yield return null;
+        }
+        cont = false;
+
+        chizzy.currentEmotion = emotionDictionary["peace"];
+        UpdateEmotion();
+
+        chizzy.currentDialog = $"Nice to meet you, {playerName}!!";
+        UpdateDialog();
+
+        LoadDialog();
+
+        while (!cont || !messageFull) {
+            yield return null;
+        }
+        cont = false;
+
+        StartCoroutine(DictDialogLoader("Message2"));
+    }
+
+    public IEnumerator DictDialogLoader(string key) {
+        string[] valueParts = dialogDictionary[key];
+        int partsLength = valueParts.Length;
+
+        for (int lineCount = 0; lineCount < partsLength; lineCount += 1) {
+
+            cont = false;
+
+            if (lineCount % 2 == 0) {
+                chizzy.currentEmotion = emotionDictionary[valueParts[lineCount]];
+                UpdateEmotion();
+            }
+            else {
+                chizzy.currentDialog = valueParts[lineCount];
+                UpdateDialog();
+
+                while (!cont || !messageFull) {
+                    yield return null;
+                }
+            }
+        }
+    }
+
     void Start()
-    {
+    {        
+        GameStart();
+    }
+
+    void GameStart() {
         dialogList.Clear();
         if (dialogList.Count == 0) {
             LoadEmotions();
         }
-
-        chizzy.currentEmotion = emotionDictionary["happy"];
-        chizzy.currentDialog = "Hello! Im Chizzy, Who are you?";
         
-        GetUsername();
-    } 
+        chizzy.currentDialog = "";
+        StartCoroutine("IntroDialog");
+    }
 
     public void BeginDialog() {
         chizzyImage.gameObject.SetActive(true);
         dialogBox.gameObject.SetActive(true);
-
-        UpdateEmotion();
-        UpdateDialog(chizzy.currentDialog);
+        cont = false;
     }
 
-    void UpdateDialog(string message) {
-        StartCoroutine(DialogTyper(message));
+    void UpdateDialog() {
+        
+        StartCoroutine(DialogTyper(chizzy.currentDialog));
     }
 
     IEnumerator DialogTyper(string message) {
         dialogText.text = "";
+        messageFull = false;
         foreach (char c in message) {
+            if (cont) {
+                dialogText.text = message;
+                messageFull = true;
+                cont = false;
+                break;
+            }
             dialogText.text += c;
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(.05f);
         }
-        chizzy.currentDialog = dialogText.text;
+        messageFull = true;
+
     }
 
     public void EndDialog() {
         chizzyImage.gameObject.SetActive(false);
         dialogBox.gameObject.SetActive(false);
+        cont = true;
     }
 
     void UpdateEmotion() {
@@ -74,7 +154,6 @@ public class Dialog_Manager : MonoBehaviour
 
     void LoadEmotions() {
         foreach (Sprite emotion in chizzy.Emotions) {
-            emotionList.Add(emotion);
             string[] emotionName = emotion.ToString().Split('_');
             emotionDictionary.Add(emotionName[1], emotion);
         }
@@ -89,17 +168,34 @@ public class Dialog_Manager : MonoBehaviour
 
     void SetUsername(string username) {
         playerName = username;
-
         userInput.SetActive(false);
-        UpdateDialog($"Nice to meet you, {playerName}!!");
-
-        chizzy.currentEmotion = emotionDictionary["peace"];
-        UpdateEmotion();
-        
-        LoadDialog();
+        cont = true;
+        hasName = true;
     }
 
     void LoadDialog() {
-        Debug.Log("Loading Dialog File");
+        string[] dialogLines = dialogTextFile.text.Split("\n");
+        foreach (string dialogLine in dialogLines) {
+            string[] dialogParts = dialogLine.Split(':');
+            string[] valueParts = dialogParts[1].Split(';');
+
+            int partsNum = valueParts.Length;
+
+            for (int i = 0; i < partsNum; i++) {
+                if (valueParts[i][0] == '$')
+                    valueParts[i] = valueParts[i].Replace("playerName", playerName).TrimStart('$');
+            }
+
+            string dictKey = dialogParts[0];
+            string[] dictValue = valueParts;
+
+            dialogDictionary.Add(dictKey, dictValue);
+        }
+    }
+
+    public void OnSpacebar() {
+        if (Navigation_Manager.instance.currentRoom == Navigation_Manager.instance.dialogRoom) {
+            cont = true;
+        }
     }
 }

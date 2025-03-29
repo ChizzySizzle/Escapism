@@ -1,0 +1,3 @@
+Tutorial:happy;This is a test of the dictionary;concerned;I really hope it works...;peace;If you're seeing this i guess it did tho!
+Message2:happy;erm girch;laughing;$Hahahahahaha playerName, you're so funny!
+Message3:concerned;Hermanhermanehermanhemanrher

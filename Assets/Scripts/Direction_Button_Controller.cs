@@ -23,7 +23,5 @@ public class Direction_Button_Controller : MonoBehaviour
         Navigation_Manager.instance.SwitchRooms(direction);
         button.interactable = false;
         button.interactable = true;
-
-        Debug.Log("Going" + direction);
     }
 }
