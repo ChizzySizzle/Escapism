@@ -19,5 +19,5 @@ MonoBehaviour:
   rightRoom: {fileID: 0}
   backRoom: {fileID: 11400000, guid: e41356342dfe9f54fbfb1798db2a4bfe, type: 2}
   leftRoom: {fileID: 0}
-  hasPuzzle: 0
-  roomPuzzle: {fileID: 0}
+  hasPuzzle: 1
+  puzzleNum: 5

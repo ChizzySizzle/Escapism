@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ public class Navigation_Manager : MonoBehaviour
     public Image backgroundImage;
     public GameObject compass;
     public GameObject chizzyButton;
+    public GameObject puzzleButton;
     public GameObject forwardButton;
     public GameObject rightButton;
     public GameObject backButton;
@@ -32,10 +34,13 @@ public class Navigation_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        compassController = compass.GetComponent<Compass_Controller>();
-
         currentRoom = startRoom;
+        LoadGame();
         Unpack();
+    }
+
+    void LoadGame() {
+        compassController = compass.GetComponent<Compass_Controller>();
     }
 
     void Unpack() {
@@ -48,18 +53,25 @@ public class Navigation_Manager : MonoBehaviour
 
         backgroundImage.sprite = currentRoom.backgroundImage;
 
+        if (currentRoom is PuzzleRoom puzzleRoom) {
+            puzzleButton.SetActive(puzzleRoom.hasPuzzle);
+        }
+
         if (currentRoom == dialogRoom) {
             Dialog_Manager.instance.BeginDialog();
             compass.SetActive(false);
         }
 
-        compassController.UpdateCompass();
+        compassController.UpdateCompass(currentRoom);
     }
 
     public void SwitchRooms(Direction_Button_Controller.Direction dir) {
         if (currentRoom == dialogRoom) {
             Dialog_Manager.instance.EndDialog();
             compass.SetActive(true);
+        }
+        if (currentRoom is PuzzleRoom) {
+            puzzleButton.SetActive(false);
         }
         if (dir == Direction_Button_Controller.Direction.Forward) {
             currentRoom = currentRoom.forwardRoom;

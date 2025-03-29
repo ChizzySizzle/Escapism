@@ -4,6 +4,7 @@ using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements.Experimental;
 
 public class Dialog_Manager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Dialog_Manager : MonoBehaviour
     public Image chizzyImage;
     public Image dialogBox;
     public TMP_Text dialogText;
+    public GameObject userInput;
 
     private string playerName;
     private List<string> dialogList = new List<string>();
@@ -29,10 +31,13 @@ public class Dialog_Manager : MonoBehaviour
 
     void Start()
     {
+        dialogList.Clear();
         if (dialogList.Count == 0) {
             LoadDialog();
             LoadEmotions();
         }
+
+        UpdateDialog(dialogDictionary["Introduction"]);
     } 
 
     public void BeginDialog() {
@@ -40,14 +45,17 @@ public class Dialog_Manager : MonoBehaviour
         dialogBox.gameObject.SetActive(true);
 
         UpdateChizEmotion();
-        dialogText.text = chizzy.currentDialog;
+        UpdateDialog(chizzy.currentDialog);
+    }
+
+    void UpdateDialog(string message) {
+        dialogText.text = message;
+        chizzy.currentDialog = dialogText.text;
     }
 
     public void EndDialog() {
         chizzyImage.gameObject.SetActive(false);
         dialogBox.gameObject.SetActive(false);
-
-        chizzy.currentDialog = dialogText.text;
     }
 
     void UpdateChizEmotion() {
@@ -62,9 +70,29 @@ public class Dialog_Manager : MonoBehaviour
         }
     }
 
+    void GetUsername() {
+        userInput.SetActive(true);
+
+        TMP_InputField inputField = userInput.GetComponent<TMP_InputField>();
+        inputField.onEndEdit.AddListener(SetUsername);
+    }
+
+    void SetUsername(string username) {
+        playerName = username;
+
+        userInput.SetActive(false);
+        UpdateDialog(dialogDictionary["Greetings"]);
+    }
+
     void LoadDialog() {
         string introDialog = "Hello! Im Chizzy, Who are you?";
         dialogList.Add(introDialog);
         dialogDictionary.Add("Introduction", introDialog);
+
+        GetUsername();
+
+        string greetings = $"Nice to meet you, {playerName}!!";
+        dialogList.Add(introDialog);
+        dialogDictionary.Add("Greetings", greetings);
     }
 }

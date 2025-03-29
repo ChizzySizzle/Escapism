@@ -11,17 +11,17 @@ public class Compass_Controller : MonoBehaviour
     public Sprite compSouth;
     public Sprite compWest;
 
-    public void UpdateCompass() {
-        if (Navigation_Manager.instance.currentRoom.facing == Room.Facing.North) {
+    public void UpdateCompass(Room currentRoom) {
+        if (currentRoom.facing == Room.Facing.North) {
             compassImage.sprite = compNorth;
         }
-        else if (Navigation_Manager.instance.currentRoom.facing == Room.Facing.East) {
+        else if (currentRoom.facing == Room.Facing.East) {
             compassImage.sprite = compEast;
         }
-        else if (Navigation_Manager.instance.currentRoom.facing == Room.Facing.South) {
+        else if (currentRoom.facing == Room.Facing.South) {
             compassImage.sprite = compSouth;
         }
-        else if (Navigation_Manager.instance.currentRoom.facing == Room.Facing.West) {
+        else if (currentRoom.facing == Room.Facing.West) {
             compassImage.sprite = compWest;
         }
         else

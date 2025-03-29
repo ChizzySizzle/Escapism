@@ -6,5 +6,5 @@ using UnityEngine;
 public class PuzzleRoom : Room
 {
     public bool hasPuzzle;
-    public Puzzle roomPuzzle;
+    public Puzzle_Manager.Puzzle puzzleNum;
 }
