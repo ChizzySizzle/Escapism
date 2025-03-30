@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class Navigation_Manager : MonoBehaviour
 {
@@ -52,6 +53,7 @@ public class Navigation_Manager : MonoBehaviour
 
         if (currentRoom is PuzzleRoom puzzleRoom) {
             puzzleButton.SetActive(puzzleRoom.hasPuzzle);
+            // Puzzle_Manager.instance.randomNumberText.SetActive(puzzleRoom.hasRandomNum);
         }
 
         if (currentRoom == dialogRoom) {
@@ -63,12 +65,9 @@ public class Navigation_Manager : MonoBehaviour
     }
 
     public void SwitchRooms(Direction_Button_Controller.Direction dir) {
-        if (currentRoom == dialogRoom) {
-            Dialog_Manager.instance.EndDialog();
-            compass.SetActive(true);
-        }
         if (currentRoom is PuzzleRoom) {
             puzzleButton.SetActive(false);
+            // Puzzle_Manager.instance.randomNumberText.SetActive(false);
         }
         if (dir == Direction_Button_Controller.Direction.Forward) {
             currentRoom = currentRoom.forwardRoom;
@@ -83,5 +82,14 @@ public class Navigation_Manager : MonoBehaviour
             currentRoom = currentRoom.leftRoom;
         }
         Unpack();
+    }
+
+    public void OnEscape() {
+        if (currentRoom == dialogRoom) {
+            Dialog_Manager.instance.EndDialog();
+            compass.SetActive(true);
+            currentRoom = startRoom;
+            Unpack();
+        }
     }
 }

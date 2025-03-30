@@ -17,10 +17,12 @@ public class Dialog_Manager : MonoBehaviour
     public GameObject userInput;
     public TextAsset dialogTextFile;
 
-    private string playerName;
+    private string playerName = "";
+    private string currentDialog;
     private bool cont;
     private bool hasName;
     private bool messageFull;
+    private bool dialogEnded;
     private List<string> dialogList = new List<string>();
     private Dictionary<string, string[]> dialogDictionary = new Dictionary<string,string[]>();
     private Dictionary<string, Sprite> emotionDictionary = new Dictionary<string,Sprite>();
@@ -34,12 +36,11 @@ public class Dialog_Manager : MonoBehaviour
     }
 
     IEnumerator IntroDialog() {
-
         cont = false;
         chizzy.currentEmotion = emotionDictionary["concerned"];
         UpdateEmotion();
 
-        chizzy.currentDialog = "(Press space for dialog)";
+        chizzy.currentDialog = "(Press space for dialog)\n(Press escape to leave)";
         UpdateDialog();
 
         while (!cont || !messageFull) {
@@ -68,12 +69,7 @@ public class Dialog_Manager : MonoBehaviour
 
         LoadDialog();
 
-        while (!cont || !messageFull) {
-            yield return null;
-        }
-        cont = false;
-
-        StartCoroutine(DictDialogLoader("Message2"));
+        currentDialog = "Message2";
     }
 
     public IEnumerator DictDialogLoader(string key) {
@@ -109,15 +105,22 @@ public class Dialog_Manager : MonoBehaviour
         if (dialogList.Count == 0) {
             LoadEmotions();
         }
-        
-        chizzy.currentDialog = "";
-        StartCoroutine("IntroDialog");
     }
 
     public void BeginDialog() {
+        dialogEnded = false;
+
+        chizzy.currentDialog = "";
+        dialogText.text = "";
+
         chizzyImage.gameObject.SetActive(true);
         dialogBox.gameObject.SetActive(true);
-        cont = false;
+
+        if (playerName == "") {
+            StartCoroutine("IntroDialog");
+        }
+        else
+            StartCoroutine(DictDialogLoader(currentDialog));
     }
 
     void UpdateDialog() {
@@ -129,7 +132,7 @@ public class Dialog_Manager : MonoBehaviour
         dialogText.text = "";
         messageFull = false;
         foreach (char c in message) {
-            if (cont) {
+            if (cont || dialogEnded) {
                 dialogText.text = message;
                 messageFull = true;
                 cont = false;
@@ -145,7 +148,8 @@ public class Dialog_Manager : MonoBehaviour
     public void EndDialog() {
         chizzyImage.gameObject.SetActive(false);
         dialogBox.gameObject.SetActive(false);
-        cont = true;
+        userInput.gameObject.SetActive(false);
+        dialogEnded = true;
     }
 
     void UpdateEmotion() {

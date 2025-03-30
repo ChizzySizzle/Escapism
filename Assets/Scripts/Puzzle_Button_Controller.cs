@@ -23,7 +23,7 @@ public class Puzzle_Button_Controller : MonoBehaviour
         puzzleButton.interactable = true;
 
         if (Navigation_Manager.instance.currentRoom is PuzzleRoom puzzleRoom) {
-            Puzzle_Manager.instance.BeginPuzzle(puzzleRoom.puzzleNum);
+            Puzzle_Manager.instance.BeginPuzzle(puzzleRoom);
         }
     }
 }
