@@ -948,6 +948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3caec6248cd4464696398db28d4923f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleNum: 0
   puzzleBackground: {fileID: 311064901}
   randomNumberText: {fileID: 1903156031}
   randomNumberInput: {fileID: 1805194704}
@@ -2050,8 +2051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd57c91b91082744899d900168631b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: {fileID: 813336053}
-  buttonPosition: 0
+  choice: {fileID: 0}
 --- !u!114 &900112459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2204,12 +2204,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05d499ab38f322848b10c344107d095d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chizzy: {fileID: 11400000, guid: 55d8c5b2ad4d04c4a80149fa7fd8d030, type: 2}
   chizzyImage: {fileID: 983731888}
   dialogBox: {fileID: 1730478317}
   dialogText: {fileID: 476740819}
   userInput: {fileID: 1975509533}
-  dialogTextFile: {fileID: 4900000, guid: 355f3671c17a0b148abf15e22eea2466, type: 3}
+  startDialog: {fileID: 11400000, guid: 044ef269b0d228046a4275019647ba00, type: 2}
+  dialogButtons:
+  - {fileID: 1776792656}
+  - {fileID: 900112459}
+  dialogChoices:
+  - {fileID: 11400000, guid: ca72b8dae095d0f4784d9a06676e638b, type: 2}
+  - {fileID: 11400000, guid: 46163c557a60690438e66ebe0c0cac15, type: 2}
 --- !u!114 &910639640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2222,6 +2227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c54a960488af6746aeac7aa91a7285b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleNum: 0
   puzzleBackground: {fileID: 311064901}
 --- !u!114 &910639641
 MonoBehaviour:
@@ -3298,8 +3304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd57c91b91082744899d900168631b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: {fileID: 467648607}
-  buttonPosition: 1
+  choice: {fileID: 0}
 --- !u!114 &1776792656
 MonoBehaviour:
   m_ObjectHideFlags: 0

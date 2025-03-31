@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,9 +9,7 @@ using UnityEngine.UI;
 public class Dialog_Button_Controller : MonoBehaviour
 {
     private Button dialogButton;
-    public TMP_Text buttonText;
-    public enum ButtonPosition { top, bottom };
-    public ButtonPosition buttonPosition;
+    public Dialog_Choice choice;
     
     // Start is called before the first frame update
     void Start()
@@ -22,14 +22,10 @@ public class Dialog_Button_Controller : MonoBehaviour
     }
 
     void OnDialogButtonClicked() {
-        if (buttonPosition == ButtonPosition.top) {
-            buttonText.text = "top, Pressed";
-            StartCoroutine(Dialog_Manager.instance.DictDialogLoader("Message3"));
-            dialogButton.gameObject.SetActive(false);
-        }
-        if (buttonPosition == ButtonPosition.bottom) {
-            buttonText.text = "bot, Pressed";
-        }
-    }
+        dialogButton.interactable = false;
+        dialogButton.interactable = true;
 
+        Dialog_Manager.instance.NewDialog(choice.nextMessage);
+        choice.beenUsed = true;
+    }
 }
