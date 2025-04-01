@@ -1,7 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
+
 
 public class Navigation_Manager : MonoBehaviour
 {
@@ -17,6 +17,8 @@ public class Navigation_Manager : MonoBehaviour
     public GameObject rightButton;
     public GameObject backButton;
     public GameObject leftButton;
+    public GameObject randomNumberText;
+
     private Compass_Controller compassController;
     
     void Awake()
@@ -32,16 +34,11 @@ public class Navigation_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentRoom = startRoom;
-        LoadGame();
-        Unpack();
-    }
-
-    void LoadGame() {
         compassController = compass.GetComponent<Compass_Controller>();
+        GoToStart();
     }
 
-    void Unpack() {
+    public void Unpack() {
         forwardButton.SetActive(currentRoom.forwardRoom != null);
         rightButton.SetActive(currentRoom.rightRoom != null);
         backButton.SetActive(currentRoom.backRoom != null && currentRoom != startRoom);
@@ -53,22 +50,26 @@ public class Navigation_Manager : MonoBehaviour
 
         if (currentRoom is PuzzleRoom puzzleRoom) {
             puzzleButton.SetActive(puzzleRoom.hasPuzzle);
-            // Puzzle_Manager.instance.randomNumberText.SetActive(puzzleRoom.hasRandomNum);
+            randomNumberText.SetActive(puzzleRoom.hasRandomNum);
+            puzzleButton.GetComponent<Puzzle_Button_Controller>().SetRoom(puzzleRoom);
+        }
+        else {
+            puzzleButton.SetActive(false);
+            randomNumberText.SetActive(false);
         }
 
         if (currentRoom == dialogRoom) {
             Dialog_Manager.instance.BeginDialog();
             compass.SetActive(false);
         }
+        else {
+            compass.SetActive(true);
+        }
 
         compassController.UpdateCompass(currentRoom);
     }
 
     public void SwitchRooms(Direction_Button_Controller.Direction dir) {
-        if (currentRoom is PuzzleRoom) {
-            puzzleButton.SetActive(false);
-            // Puzzle_Manager.instance.randomNumberText.SetActive(false);
-        }
         if (dir == Direction_Button_Controller.Direction.Forward) {
             currentRoom = currentRoom.forwardRoom;
         }
@@ -84,12 +85,15 @@ public class Navigation_Manager : MonoBehaviour
         Unpack();
     }
 
+    public void GoToStart() {
+        currentRoom = startRoom;
+        Unpack();
+    }
+
     public void OnEscape() {
         if (currentRoom == dialogRoom) {
             Dialog_Manager.instance.EndDialog();
-            compass.SetActive(true);
-            currentRoom = startRoom;
-            Unpack();
+            GoToStart();
         }
     }
 }

@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Puzzle_Button_Controller : MonoBehaviour
 {
     public Button puzzleButton;
+    public PuzzleRoom currentRoom;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +17,14 @@ public class Puzzle_Button_Controller : MonoBehaviour
         puzzleButton.onClick.AddListener(OnButtonClick);
     }
 
+    public void SetRoom(PuzzleRoom puzzleRoom) {
+        currentRoom = puzzleRoom;
+    }
+
     void OnButtonClick() {
         puzzleButton.interactable = false;
         puzzleButton.interactable = true;
 
-        if (Navigation_Manager.instance.currentRoom is PuzzleRoom puzzleRoom) {
-            Puzzle_Manager.instance.BeginPuzzle(puzzleRoom);
-        }
+        Puzzle_Manager.instance.GetRoomPuzzle(currentRoom);
     }
 }

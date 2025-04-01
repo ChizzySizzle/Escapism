@@ -21,4 +21,4 @@ MonoBehaviour:
   leftRoom: {fileID: 0}
   hasPuzzle: 1
   hasRandomNum: 1
-  puzzleNum: 3
+  roomPuzzleNum: 3

@@ -7,6 +7,6 @@ public class Dialog_Message : ScriptableObject {
     public Dialog_Choice[] dialogChoices;
     public Dialog_Message nextDialog;
     public Sprite emotion;
-    public bool isStart;
+    public bool isEnd;
 
 }

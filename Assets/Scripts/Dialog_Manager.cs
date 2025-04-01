@@ -23,7 +23,6 @@ public class Dialog_Manager : MonoBehaviour
     private bool cont = false;
     private bool gettingName = false;
     private bool messageFull;
-    private bool dialogEnded;
 
     void Awake()
     {
@@ -43,9 +42,12 @@ public class Dialog_Manager : MonoBehaviour
         }
     }
 
-    private void DisplayDialog() {
-        if (currentDialog == null) {
-            Navigation_Manager.instance.OnEscape();
+    public void DisplayDialog(Dialog_Message newDialog) {
+        currentDialog = newDialog;
+
+        if (newDialog.isEnd) {
+            currentDialog = newDialog.nextDialog;
+            EndDialog();
         }
         else {
             chizzyImage.gameObject.SetActive(true);
@@ -55,151 +57,91 @@ public class Dialog_Manager : MonoBehaviour
                 button.gameObject.SetActive(false);
             }
 
-            if (currentDialog.dialogMessage.EndsWith("name?")) {
+            if (newDialog.dialogMessage.EndsWith("name?")) {
                 GetUsername();
             }
 
-            string currentDialogFormatted = currentDialog.dialogMessage.Replace("{player}", playerName);
-            
-            dialogText.text = currentDialogFormatted;
-            chizzyImage.sprite = currentDialog.emotion;
+            string newDialogFormatted = newDialog.dialogMessage.Replace("{player}", playerName);
 
-            if (currentDialog.dialogChoices.Length > 0) {
+            if (newDialog.dialogChoices.Length > 0) {
                 bool anyLeft = false;
-
-                for (int i = 0; i < currentDialog.dialogChoices.Length; i++) {
-                    if (currentDialog.dialogChoices[i].beenUsed == false) {
-                        dialogButtons[i].gameObject.SetActive(true);
-                        dialogButtons[i].GetComponentInChildren<TMP_Text>().text = currentDialog.dialogChoices[i].choiceText;
-                        dialogButtons[i].GetComponent<Dialog_Button_Controller>().choice = currentDialog.dialogChoices[i];
+                foreach (var choice in newDialog.dialogChoices) {
+                    if (!choice.beenUsed)
                         anyLeft = true;
-                    }
                 }
                 if (!anyLeft) {
-                    NewDialog(currentDialog.nextDialog);
+                    DisplayDialog(newDialog.nextDialog);
+                    return;
                 }
             }
-            else {
-                StartCoroutine(WaitForInput(currentDialog.nextDialog));
-            }
+            StartCoroutine(TypeDialog(newDialogFormatted));
+            chizzyImage.sprite = newDialog.emotion;
+
+            StartCoroutine(WaitForInput(newDialog.nextDialog));
         }
     }
 
-    public void NewDialog(Dialog_Message newDialog) {
-        currentDialog = newDialog;
-        DisplayDialog();
+    IEnumerator TypeDialog(string message) {
+        dialogText.text = "";
+        messageFull = false;
+        cont = false;
+        foreach(char c in message) {
+            if (cont) {
+                cont = false;
+                dialogText.text = message;
+                messageFull = true;
+                break;
+            }
+            dialogText.text += c;
+            yield return new WaitForSeconds(.05f);
+        }
+        messageFull = true;
+        if (currentDialog.dialogChoices.Length > 0) {
+            ShowDiaologOptions(currentDialog);
+        }
+    }
+
+    void ShowDiaologOptions(Dialog_Message newDialog) {
+        for (int i = 0; i < newDialog.dialogChoices.Length; i++) {
+            if (newDialog.dialogChoices[i].beenUsed == false) {
+                dialogButtons[i].gameObject.SetActive(true);
+                dialogButtons[i].GetComponentInChildren<TMP_Text>().text = newDialog.dialogChoices[i].choiceText;
+                dialogButtons[i].GetComponent<Dialog_Button_Controller>().choice = newDialog.dialogChoices[i];
+            }
+        }
     }
 
     public void BeginDialog() {
         chizzyImage.gameObject.SetActive(true);
         dialogBox.gameObject.SetActive(true);
 
-        DisplayDialog();
+        DisplayDialog(currentDialog);
     }
 
     public void EndDialog() {
+        StopAllCoroutines();
         chizzyImage.gameObject.SetActive(false);
         dialogBox.gameObject.SetActive(false);
         userInput.gameObject.SetActive(false);
-        dialogEnded = true;
+        Navigation_Manager.instance.GoToStart();
     }
 
     private IEnumerator WaitForInput(Dialog_Message newDialog) {
         cont = false;
-        while (!cont || gettingName) {
+        while (!cont || gettingName || !messageFull) {
             yield return null;
         }
-        currentDialog = newDialog;
-        if (currentDialog.isStart) {
-            Navigation_Manager.instance.OnEscape();
-        }
-        else {
-            DisplayDialog();
-        }
 
+        if (newDialog == null) {
+            EndDialog();
+        }
+        else if (currentDialog.isEnd) {
+            currentDialog = newDialog.nextDialog;
+            EndDialog();
+        }
+        else
+            DisplayDialog(newDialog);
     }
-
-    // IEnumerator IntroDialog() {
-    //     cont = false;
-    //     chizzy.currentEmotion = emotionDictionary["concerned"];
-    //     UpdateEmotion();
-    //     chizzy.currentDialog = "(Press space for dialog)\n(Press escape to leave)";
-    //     UpdateDialog();
-
-    //     while (!cont || !messageFull) {
-    //         yield return null;
-    //     }
-    //     cont = false;
-    //     chizzy.currentEmotion = emotionDictionary["happy"];
-    //     UpdateEmotion();
-    //     chizzy.currentDialog = "Hello! Im Chizzy, Who are you?";
-    //     UpdateDialog();
-
-    //     GetUsername();
-
-    //     while (!cont || !hasName || !messageFull) {
-    //         yield return null;
-    //     }
-    //     cont = false;
-    //     chizzy.currentEmotion = emotionDictionary["peace"];
-    //     UpdateEmotion();
-    //     chizzy.currentDialog = $"Nice to meet you, {playerName}!!";
-    //     UpdateDialog();
-
-    //     LoadDialog();
-    //     currentDialog = "Message2";
-
-    //     while (!cont || !messageFull) {
-    //         yield return null;
-    //     }
-    //     cont = false;
-    //     Navigation_Manager.instance.OnEscape();
-    // }
-
-    // public IEnumerator DictDialogLoader(string key) {
-    //     string[] valueParts = dialogDictionary[key];
-    //     int partsLength = valueParts.Length;
-
-    //     for (int lineCount = 0; lineCount < partsLength; lineCount += 1) {
-
-    //         cont = false;
-
-    //         if (lineCount % 2 == 0) {
-    //             chizzy.currentEmotion = emotionDictionary[valueParts[lineCount]];
-    //             UpdateEmotion();
-    //         }
-    //         else {
-    //             chizzy.currentDialog = valueParts[lineCount];
-    //             UpdateDialog();
-
-    //             while (!cont || !messageFull) {
-    //                 yield return null;
-    //             }
-    //         }
-    //     }
-    //     Navigation_Manager.instance.OnEscape();
-    // }
-
-
-    // void UpdateDialog() {
-    //     StartCoroutine(DialogTyper(chizzy.currentDialog));
-    // }
-
-    // IEnumerator DialogTyper(string message) {
-    //     dialogText.text = "";
-    //     messageFull = false;
-    //     foreach (char c in message) {
-    //         if (cont || dialogEnded) {
-    //             dialogText.text = message;
-    //             messageFull = true;
-    //             cont = false;
-    //             break;
-    //         }
-    //         dialogText.text += c;
-    //         yield return new WaitForSeconds(.05f);
-    //     }
-    //     messageFull = true;
-    // }
 
     void GetUsername() {
         userInput.SetActive(true);
@@ -215,27 +157,6 @@ public class Dialog_Manager : MonoBehaviour
         cont = true;
         gettingName = false;
     }
-
-
-    // void LoadDialog() {
-    //     string[] dialogLines = dialogTextFile.text.Split("\n");
-    //     foreach (string dialogLine in dialogLines) {
-    //         string[] dialogParts = dialogLine.Split(':');
-    //         string[] valueParts = dialogParts[1].Split(';');
-
-    //         int partsNum = valueParts.Length;
-
-    //         for (int i = 0; i < partsNum; i++) {
-    //             if (valueParts[i][0] == '$')
-    //                 valueParts[i] = valueParts[i].Replace("playerName", playerName).TrimStart('$');
-    //         }
-
-    //         string dictKey = dialogParts[0];
-    //         string[] dictValue = valueParts;
-
-    //         dialogDictionary.Add(dictKey, dictValue);
-    //     }
-    // }
 
     public void OnSpacebar() {
         if (Navigation_Manager.instance.currentRoom == Navigation_Manager.instance.dialogRoom) {
