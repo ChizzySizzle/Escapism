@@ -6,4 +6,5 @@ public class Dialog_Choice : ScriptableObject {
     public string choiceText;
     public Dialog_Message nextMessage;
     public bool beenUsed;
+    public bool isRepeatable;
 }

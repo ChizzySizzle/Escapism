@@ -26,6 +26,7 @@ public class Dialog_Button_Controller : MonoBehaviour
         dialogButton.interactable = true;
 
         Dialog_Manager.instance.DisplayDialog(choice.nextMessage);
-        choice.beenUsed = true;
+        if (!choice.isRepeatable)
+            choice.beenUsed = true;
     }
 }

@@ -1,26 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Simon_Button_Controller : MonoBehaviour
 {
-    // private Button button;
-    // public int buttonNum;
+    public int buttonNum;
+
+    private Button button;
+    private Puzzle_Two_Controller puzzleTwo;
+
     
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-    //     button = GetComponent<Button>();
-    //     button.onClick.AddListener(ButtonClicked);
-    // }
-
-    // void ButtonClicked() {
-    //     Puzzle_Manager.instance.
-    //     Puzzle_Two_Manager.AddNumber(buttonNum);
-    // }
-
-    // void ButtonGlow(int num) {
+    void Start()
+    {
+        button = GetComponent<Button>();
+        puzzleTwo = FindObjectOfType<Puzzle_Two_Controller>();
         
-    // }
+        button.onClick.AddListener(ButtonClicked);
+    }
+
+    void ButtonClicked() {
+        button.interactable = false;
+        button.interactable = true;
+
+        puzzleTwo.AddInput(buttonNum);
+    }
 }

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 045a40df3f38ab44586b9b9d00a69f67, type: 3}
-  m_Name: Outro_1
+  m_Name: Puzzles_Yes
   m_EditorClassIdentifier: 
-  dialogMessage: Seeya!
+  dialogMessage: Great, keep at it!
   dialogChoices: []
-  nextDialog: {fileID: 0}
+  nextDialog: {fileID: 11400000, guid: 990951c390843c84386a85a74fb21bfa, type: 2}
   emotion: {fileID: 21300000, guid: b76e24ec371c50c4eb927ff99cae8eb1, type: 3}
+  isEnd: 0

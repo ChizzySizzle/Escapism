@@ -2,7 +2,7 @@
 using UnityEngine;
 using TMPro;
 
-public class Puzzle_One_Manager : Puzzle
+public class Puzzle_One_Controller : Puzzle
 {
 
     public TMP_InputField randomNumberInput;
@@ -17,25 +17,27 @@ public class Puzzle_One_Manager : Puzzle
         keyString = randomNum.ToString();
 
         SetKey(keyString);
+
+        randomNumberInput.onSubmit.AddListener(GetInput); 
     }
 
     public override void BeginPuzzle() {
         base.BeginPuzzle();
         
         randomNumberInput.gameObject.SetActive(true);
-
-        randomNumberInput.onEndEdit.AddListener(GetInput); 
     }
 
     private void GetInput(string Input) {
         if (CheckInput(Input) == false) {
+            randomNumberInput.text = "";
+            SetStatusText("Incorrect\nTry Again");
             randomNumberInput.ActivateInputField();
         }
     }
 
     public override void PuzzleCompleted() {
+        EndPuzzle();
         base.PuzzleCompleted();
-        randomNumberInput.gameObject.SetActive(false);
     }
 
     public override void EndPuzzle() {

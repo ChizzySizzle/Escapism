@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc12f788d13691246bfe500414132a91, type: 3}
-  m_Name: Wall_No
+  m_Script: {fileID: 11500000, guid: 045a40df3f38ab44586b9b9d00a69f67, type: 3}
+  m_Name: Part_1_End
   m_EditorClassIdentifier: 
-  choiceText: No.
-  nextMessage: {fileID: 11400000, guid: 7ae49f0eb97270c41a35d4b4ed941faf, type: 2}
-  beenUsed: 0
-  isRepeatable: 0
+  dialogMessage: 
+  dialogChoices: []
+  nextDialog: {fileID: 11400000, guid: 0b2bbeefb9ecfd445ba76bd411a7d9cf, type: 2}
+  emotion: {fileID: 0}
+  isEnd: 1

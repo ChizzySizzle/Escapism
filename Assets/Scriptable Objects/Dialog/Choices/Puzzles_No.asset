@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc12f788d13691246bfe500414132a91, type: 3}
-  m_Name: Wall_No
+  m_Name: Puzzles_No
   m_EditorClassIdentifier: 
-  choiceText: No.
-  nextMessage: {fileID: 11400000, guid: 7ae49f0eb97270c41a35d4b4ed941faf, type: 2}
+  choiceText: No...
+  nextMessage: {fileID: 11400000, guid: 72a805b6f34c3f642b198594a05d30ba, type: 2}
   beenUsed: 0
-  isRepeatable: 0
+  isRepeatable: 1
