@@ -7,6 +7,7 @@ public class Puzzle : MonoBehaviour
     public enum PuzzleNum { one, two, three, four, five, six, seven, eight }
     public PuzzleNum puzzleNum;
     public GameObject puzzleBackground;
+
     public TMP_Text puzzleStatus;
 
     protected string keyString;
