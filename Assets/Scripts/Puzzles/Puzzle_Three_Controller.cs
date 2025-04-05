@@ -4,7 +4,6 @@ using TMPro;
 
 public class Puzzle_Three_Controller : Puzzle
 {
-    string inputString;
     string displayText = "";
     public TMP_InputField inputField;
     public TMP_Text puzzleText;
@@ -13,30 +12,31 @@ public class Puzzle_Three_Controller : Puzzle
     {
         base.Start();
 
-        int randomNumX = Random.Range(2, 10);
-        int randomNumY = Random.Range(2, 10);
-        int answer = 0;
+        int randomConstX = Random.Range(3, 7);
+        int randomVarX = Random.Range(3, 10);
 
-        for (int i = 1; i < 4; i++) {
-            answer = randomNumX * i + randomNumY;
-            displayText += i.ToString() + " = " + answer + "\n";
-        }
-        displayText += "4 = X?";
+        int randomConstY = Random.Range(3, 7);
+        int randomVarY = Random.Range(3, 10);
 
-        answer = randomNumX * 4 + randomNumY;
-        keyString = answer.ToString();
-        SetKey(keyString);
+        int randomConstZ = Random.Range(3, 7);
+        int randomVarZ = Random.Range(3, 10);
+
+
+        displayText += randomConstX.ToString() + "X" + " = " + (randomConstX * randomVarX).ToString() + "\n";
+        displayText += randomConstY.ToString() + "Y" + " = " + (randomConstY * randomVarY).ToString() + "\n";
+        displayText += randomConstZ.ToString() + "Z" + " = " + (randomConstZ * randomVarZ).ToString() + "\n";
+        displayText += "XYZ = ?";
+
+        keyString = (randomVarX * randomVarY * randomVarZ).ToString();
 
         inputField.onSubmit.AddListener(OnInputFieldSubmit);
     }
     
     public void OnInputFieldSubmit(string inputText) {
-        inputString = inputText;
-        GetInput(inputString);
+        GetInput(inputText);
     }
     public override void BeginPuzzle() {
         puzzleText.text = displayText;
-        inputString = "";
         inputField.gameObject.SetActive(true);
         puzzleText.gameObject.SetActive(true);
         base.BeginPuzzle();
@@ -44,8 +44,10 @@ public class Puzzle_Three_Controller : Puzzle
 
     private void GetInput(string input) {
         if (CheckInput(input) == false) {
-            inputString = "";
-            SetStatusText("Incorrect\nTry Again");
+            inputField.text = "";
+            inputField.ActivateInputField();
+
+            puzzleStatus.text = "Incorrect\nTry Again";
         }
     }
 

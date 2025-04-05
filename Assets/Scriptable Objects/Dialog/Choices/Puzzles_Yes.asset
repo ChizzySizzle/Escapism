@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choiceText: Yes!
   nextMessage: {fileID: 11400000, guid: 75897fcc05c82ed4ba7a07839cbf5f6d, type: 2}
-  beenUsed: 1
+  choiceRequirements:
+  - {fileID: 11400000, guid: 780bab0f140240b438d2bb95868f97f1, type: 2}
+  beenUsed: 0
   isRepeatable: 0

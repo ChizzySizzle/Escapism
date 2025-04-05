@@ -5,6 +5,7 @@ using UnityEngine;
 public class Dialog_Choice : ScriptableObject {
     public string choiceText;
     public Dialog_Message nextMessage;
+    public Dialog_Requirement[] choiceRequirements;
     public bool beenUsed;
     public bool isRepeatable;
 }

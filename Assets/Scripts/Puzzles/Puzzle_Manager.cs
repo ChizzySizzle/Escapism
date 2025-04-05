@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Puzzle_Manager : MonoBehaviour
 {
+    // Public references
     public static Puzzle_Manager instance;
     public GameObject puzzleBackground;
     public List<PuzzleRoom> puzzleRooms= new List<PuzzleRoom>();
-    public Puzzle[] puzzles;
+    public Dialog_Requirement hasDonePuzzle;
 
+    private Puzzle[] puzzles;
     private int completedPuzzles;
     private PuzzleRoom currentPuzzleRoom;
     private Puzzle currentPuzzle;
@@ -28,6 +30,8 @@ public class Puzzle_Manager : MonoBehaviour
         }
         puzzles = FindObjectsOfType<Puzzle>();
 
+        hasDonePuzzle.isSatisfied = false;
+
         completedPuzzles = 0;
     }
 
@@ -45,9 +49,11 @@ public class Puzzle_Manager : MonoBehaviour
 
     public void AddCompletedPuzzle() {
         completedPuzzles++;
+        if (completedPuzzles == 1) {
+            hasDonePuzzle.isSatisfied = true;
+        }
         currentPuzzleRoom.hasPuzzle = false;
         Navigation_Manager.instance.Unpack();
-        Debug.Log(completedPuzzles);
     }
 
     public void OnEscape() {

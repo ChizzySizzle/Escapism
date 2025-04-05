@@ -89,24 +89,39 @@ public class Dialog_Manager : MonoBehaviour
             if (cont) {
                 cont = false;
                 dialogText.text = message;
-                messageFull = true;
                 break;
             }
             dialogText.text += c;
             yield return new WaitForSeconds(.05f);
         }
-        messageFull = true;
         if (currentDialog.dialogChoices.Length > 0) {
             ShowDiaologOptions(currentDialog);
+        }
+        else {
+            messageFull = true;
         }
     }
 
     void ShowDiaologOptions(Dialog_Message newDialog) {
         for (int i = 0; i < newDialog.dialogChoices.Length; i++) {
             if (newDialog.dialogChoices[i].beenUsed == false) {
-                dialogButtons[i].gameObject.SetActive(true);
-                dialogButtons[i].GetComponentInChildren<TMP_Text>().text = newDialog.dialogChoices[i].choiceText;
-                dialogButtons[i].GetComponent<Dialog_Button_Controller>().choice = newDialog.dialogChoices[i];
+
+                bool showOption = true;
+
+                if (newDialog.dialogChoices[i].choiceRequirements != null) {
+                    foreach (Dialog_Requirement requirement in newDialog.dialogChoices[i].choiceRequirements) {
+                        if (!requirement.isSatisfied) {
+                            showOption = false;
+                            break;
+                        }
+                    }
+                }
+
+                if (showOption) {
+                    dialogButtons[i].gameObject.SetActive(true);
+                    dialogButtons[i].GetComponentInChildren<TMP_Text>().text = newDialog.dialogChoices[i].choiceText;
+                    dialogButtons[i].GetComponent<Dialog_Button_Controller>().choice = newDialog.dialogChoices[i];
+                }
             }
         }
     }

@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &56083875
 RectTransform:
   m_ObjectHideFlags: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56083874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -276,7 +276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &73611625
 RectTransform:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73611624}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2303,7 +2303,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f250dcaf2f8d73648a812864d3678aa0, type: 2}
   - {fileID: 11400000, guid: ddb53db9a3a3bc34cbe18b87708568b9, type: 2}
   - {fileID: 11400000, guid: 1cf845e71f9d18149b0a5c77ce34a773, type: 2}
-  puzzles: []
+  hasDonePuzzle: {fileID: 11400000, guid: 780bab0f140240b438d2bb95868f97f1, type: 2}
 --- !u!114 &910639641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2541,9 +2541,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   compassImage: {fileID: 1022146617}
   compNorth: {fileID: 21300000, guid: 019f911219b9dca4c950f42120b89b55, type: 3}
-  compEast: {fileID: 21300000, guid: 4b0c5f1447be91a428cd9207308bac24, type: 3}
+  compEast: {fileID: 21300000, guid: 53f66b9498361a64182f84e878ca141d, type: 3}
   compSouth: {fileID: 21300000, guid: 1441c5cc6a2151f408a04e7dd377c3cc, type: 3}
-  compWest: {fileID: 21300000, guid: 53f66b9498361a64182f84e878ca141d, type: 3}
+  compWest: {fileID: 21300000, guid: 4b0c5f1447be91a428cd9207308bac24, type: 3}
 --- !u!1 &1031645529
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,7 +3438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: XX
+  m_text: XXX
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 993267f64050d2746a1cb8f650a5b2b3, type: 2}
   m_sharedMaterial: {fileID: 3492529164394882806, guid: 993267f64050d2746a1cb8f650a5b2b3, type: 2}
@@ -3609,7 +3609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1610827901
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3680,7 +3680,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610827900}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -4475,11 +4475,6 @@ MonoBehaviour:
   puzzleBackground: {fileID: 311064901}
   puzzleStatus: {fileID: 1405772571}
   simonLength: 10
-  simonButtons:
-  - {fileID: 1610827900}
-  - {fileID: 56083874}
-  - {fileID: 73611624}
-  - {fileID: 2124301735}
 --- !u!1 &1903156031
 GameObject:
   m_ObjectHideFlags: 0
@@ -4711,7 +4706,7 @@ MonoBehaviour:
   m_CharacterValidation: 0
   m_RegexValue: 
   m_GlobalPointSize: 40
-  m_CharacterLimit: 0
+  m_CharacterLimit: 3
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -5103,7 +5098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2124301736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5174,7 +5169,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124301735}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
