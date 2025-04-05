@@ -17,18 +17,15 @@ public class Navigation_Manager : MonoBehaviour
     public GameObject rightButton;
     public GameObject backButton;
     public GameObject leftButton;
+    public GameObject rightCabinet;
+    public GameObject leftCabinet;
     public GameObject randomNumberText;
 
     private Compass_Controller compassController;
     
     void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
+        instance = this;
     }
 
     // Start is called before the first frame update
@@ -45,6 +42,9 @@ public class Navigation_Manager : MonoBehaviour
         leftButton.SetActive(currentRoom.leftRoom != null);
 
         chizzyButton.SetActive(currentRoom.hasChizzy);
+
+        rightCabinet.SetActive(currentRoom.hasRightCabinet);
+        leftCabinet.SetActive(currentRoom.hasLeftCabinet);
 
         backgroundImage.sprite = currentRoom.backgroundImage;
 

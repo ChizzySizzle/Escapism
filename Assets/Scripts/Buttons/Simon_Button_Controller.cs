@@ -1,27 +1,18 @@
 
-using UnityEngine;
-using UnityEngine.UI;
-
-public class Simon_Button_Controller : MonoBehaviour
+public class Simon_Button_Controller : ButtonClass
 {
     public int buttonNum;
 
-    private Button button;
     private Puzzle_Two_Controller puzzleTwo;
 
-    
-    void Start()
+    public override void Start()
     {
-        button = GetComponent<Button>();
-        puzzleTwo = FindObjectOfType<Puzzle_Two_Controller>();
-        
-        button.onClick.AddListener(ButtonClicked);
+        base.Start();
+        puzzleTwo = FindAnyObjectByType<Puzzle_Two_Controller>();
     }
 
-    void ButtonClicked() {
-        button.interactable = false;
-        button.interactable = true;
-
+    public override void OnButtonClick() {
+        base.OnButtonClick();
         puzzleTwo.AddInput(buttonNum);
     }
 }

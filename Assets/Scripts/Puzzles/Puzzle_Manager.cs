@@ -57,6 +57,8 @@ public class Puzzle_Manager : MonoBehaviour
     }
 
     public void OnEscape() {
-        currentPuzzle.EndPuzzle();
+        if (currentPuzzle != null) {
+            currentPuzzle.EndPuzzle();
+        }
     }
 }

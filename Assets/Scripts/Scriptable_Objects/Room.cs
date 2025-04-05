@@ -8,6 +8,8 @@ public class Room : ScriptableObject
     public Facing facing;
     public Sprite backgroundImage;
     public bool hasChizzy;
+    public bool hasLeftCabinet;
+    public bool hasRightCabinet;
     public Room forwardRoom;
     public Room rightRoom;
     public Room backRoom;
