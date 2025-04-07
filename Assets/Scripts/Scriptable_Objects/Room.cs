@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scriptable Objects/Room")]
+[CreateAssetMenu(menuName = "Scriptable Objects/Rooms/Room")]
 public class Room : ScriptableObject
 {
     public enum Facing { North, East, South, West, None}

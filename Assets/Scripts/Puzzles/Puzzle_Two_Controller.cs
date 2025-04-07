@@ -16,13 +16,22 @@ public class Puzzle_Two_Controller : Puzzle
     {
         // Call parent class start
         base.Start();
-
+        // Find the button objects for the puzzle
         simonButtons = FindObjectsOfType<Simon_Button_Controller>();
 
+        // Call the restart function
+        OnRestart();
+    }
+
+    // Load in puzzle information on start/restart
+    public override void OnRestart() {
+        keyString = "";
+        
         for (int i = 0; i < simonLength; i++) {
             // Append an integer 1-4 to the puzzles answer key to the specified simon length
             keyString += Random.Range(1, 5).ToString();
         }
+        inputString = "";
     }
 
     public override void BeginPuzzle() {

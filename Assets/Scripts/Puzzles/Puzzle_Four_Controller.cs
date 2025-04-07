@@ -6,13 +6,19 @@ using UnityEngine;
 public class Puzzle_Four_Controller : Puzzle
 {
     public TMP_Text puzzleText;
+    public bool textDisplaying;
     public TMP_InputField playerInput;
 
     public override void Start() {
         // Call parent class start
         base.Start();
+        // Call the restart function
+        OnRestart();
+    }
 
+    public override void OnRestart() {
         keyString = Random.Range(100000, 999999).ToString();
+        playerInput.text = "";
     }
 
     public override void BeginPuzzle() {
@@ -41,13 +47,13 @@ public class Puzzle_Four_Controller : Puzzle
         puzzleBackground.SetActive(true);
         puzzleText.gameObject.SetActive(true);
         puzzleText.text = text;
+        Puzzle_Manager.instance.SetCurrentPuzzle(this);
         StartCoroutine("EndText");
     }
 
     IEnumerator EndText() {
-        yield return new WaitForSecondsRealtime(3);
-        puzzleBackground.SetActive(false);
-        puzzleText.gameObject.SetActive(false);
+        yield return new WaitForSecondsRealtime(5);
+        EndPuzzle();
     }
 
     public override void PuzzleCompleted() {

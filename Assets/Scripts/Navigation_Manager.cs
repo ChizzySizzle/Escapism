@@ -19,7 +19,8 @@ public class Navigation_Manager : MonoBehaviour
     public GameObject leftButton;
     public GameObject rightCabinet;
     public GameObject leftCabinet;
-    public GameObject randomNumberText;
+    public GameObject puzzleOneNumber;
+    public GameObject puzzleFiveNumber;
 
     private Compass_Controller compassController;
     
@@ -32,6 +33,15 @@ public class Navigation_Manager : MonoBehaviour
     void Start()
     {
         compassController = compass.GetComponent<Compass_Controller>();
+        
+        Game_Manager.instance.onRestart += OnRestart;
+        OnRestart();
+    }
+
+    void OnRestart() {
+        if (currentRoom == dialogRoom) {
+            Dialog_Manager.instance.EndDialog();
+        }
         GoToStart();
     }
 
@@ -50,12 +60,14 @@ public class Navigation_Manager : MonoBehaviour
 
         if (currentRoom is PuzzleRoom puzzleRoom) {
             puzzleButton.SetActive(puzzleRoom.hasPuzzle);
-            randomNumberText.SetActive(puzzleRoom.hasRandomNum);
+            puzzleOneNumber.SetActive(puzzleRoom.hasPuzzleOneNum);
+            puzzleFiveNumber.SetActive(puzzleRoom.hasPuzzleFiveNum);
             puzzleButton.GetComponent<Puzzle_Button_Controller>().SetRoom(puzzleRoom);
         }
         else {
             puzzleButton.SetActive(false);
-            randomNumberText.SetActive(false);
+            puzzleOneNumber.SetActive(false);
+            puzzleFiveNumber.SetActive(false);
         }
 
         if (currentRoom == dialogRoom) {

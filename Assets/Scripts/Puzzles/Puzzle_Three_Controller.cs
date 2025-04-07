@@ -11,6 +11,14 @@ public class Puzzle_Three_Controller : Puzzle
     public override void Start()
     {
         base.Start();
+        inputField.onSubmit.AddListener(OnInputFieldSubmit);
+
+        OnRestart();
+    }
+
+    public override void OnRestart() {
+        displayText = "";
+        inputField.text = "";
 
         int randomConstX = Random.Range(3, 7);
         int randomVarX = Random.Range(3, 10);
@@ -28,8 +36,6 @@ public class Puzzle_Three_Controller : Puzzle
         displayText += "XYZ = ?";
 
         keyString = (randomVarX * randomVarY * randomVarZ).ToString();
-
-        inputField.onSubmit.AddListener(OnInputFieldSubmit);
     }
     
     public void OnInputFieldSubmit(string inputText) {

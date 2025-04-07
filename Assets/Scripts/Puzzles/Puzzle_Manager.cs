@@ -25,14 +25,21 @@ public class Puzzle_Manager : MonoBehaviour
 
     void Start()
     {
+        puzzles = FindObjectsOfType<Puzzle>();
+
+        Game_Manager.instance.onRestart += OnRestart;
+        OnRestart();
+    }
+
+    void OnRestart() {
         foreach (PuzzleRoom room in puzzleRooms) {
             room.hasPuzzle = true;
         }
-        puzzles = FindObjectsOfType<Puzzle>();
-
         hasDonePuzzle.isSatisfied = false;
 
         completedPuzzles = 0;
+
+        OnEscape();
     }
 
     public void GetRoomPuzzle(PuzzleRoom currentRoom) {
@@ -52,8 +59,15 @@ public class Puzzle_Manager : MonoBehaviour
         if (completedPuzzles == 1) {
             hasDonePuzzle.isSatisfied = true;
         }
+        else if (completedPuzzles > 4) {
+            Game_Manager.instance.GameWon();
+        }
         currentPuzzleRoom.hasPuzzle = false;
         Navigation_Manager.instance.Unpack();
+    }
+
+    public void SetCurrentPuzzle(Puzzle puzzle) {
+        currentPuzzle = puzzle;
     }
 
     public void OnEscape() {

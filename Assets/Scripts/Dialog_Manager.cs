@@ -31,12 +31,22 @@ public class Dialog_Manager : MonoBehaviour
 
     void Start()
     {        
+        TMP_InputField inputField = userInput.GetComponent<TMP_InputField>();
+        inputField.onSubmit.AddListener(SetUsername);
+
+        Game_Manager.instance.onRestart += OnRestart;
+        OnRestart();
+    }
+
+    void OnRestart() {
         currentDialog = startDialog;
         playerName = "player";
 
         foreach (var dialog in dialogChoices) {
             dialog.beenUsed = false;
         }
+
+        userInput.GetComponent<TMP_InputField>().text = "";
     }
 
     public void DisplayDialog(Dialog_Message newDialog) {
@@ -158,9 +168,6 @@ public class Dialog_Manager : MonoBehaviour
     void GetUsername() {
         userInput.SetActive(true);
         gettingName = true;
-
-        TMP_InputField inputField = userInput.GetComponent<TMP_InputField>();
-        inputField.onSubmit.AddListener(SetUsername);
     }
 
     void SetUsername(string username) {

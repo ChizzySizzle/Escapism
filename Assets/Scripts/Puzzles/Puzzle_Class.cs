@@ -19,6 +19,11 @@ public class Puzzle : MonoBehaviour
 
     // For game start
     public virtual void Start() {
+        Game_Manager.instance.onRestart += OnRestart;
+    }
+
+    // For every set/reset of the game
+    public virtual void OnRestart() {
 
     }
 

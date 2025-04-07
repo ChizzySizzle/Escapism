@@ -18,6 +18,16 @@ public class Cabinet_Manager : MonoBehaviour
     }
 
     void Start() {
+        puzzleFour = FindObjectOfType<Puzzle_Four_Controller>();
+    
+        Game_Manager.instance.onRestart += OnRestart;
+        OnRestart();
+    }
+
+    void OnRestart() {
+        playerHasKey = false;
+        playerHasCode = false;
+
         int randomKeyNum = Random.Range(0, cabinetRooms.Length);
         int randomCodeNum = Random.Range(0, cabinetRooms.Length);
 
@@ -27,8 +37,6 @@ public class Cabinet_Manager : MonoBehaviour
 
         randomKeyRoom = cabinetRooms[randomKeyNum];
         randomCodeRoom = cabinetRooms[randomCodeNum];
-
-        puzzleFour = FindObjectOfType<Puzzle_Four_Controller>();
     }
 
     public void CheckCabinet() {

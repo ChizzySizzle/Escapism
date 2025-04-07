@@ -13,15 +13,24 @@ public class Puzzle_One_Controller : Puzzle
         // Call parent start function
         base.Start();
         
+        // Add a listener function for when the player submits their input
+        randomNumberInput.onSubmit.AddListener(GetInput); 
+
+        // Call the restart function
+        OnRestart();
+    }
+
+    // Load in puzzle information on start/restart
+    public override void OnRestart()
+    {
+        base.OnRestart();
+
         // Generate a random four digit number
         int randomNum = Random.Range(1000, 9999);
 
         // Set the random number room text and answer key to the random number
-        Navigation_Manager.instance.randomNumberText.GetComponent<TMP_Text>().text = randomNum.ToString();
+        Navigation_Manager.instance.puzzleOneNumber.GetComponent<TMP_Text>().text = randomNum.ToString();
         keyString = randomNum.ToString();
-
-        // Add a listener function for when the player submits their input
-        randomNumberInput.onSubmit.AddListener(GetInput); 
     }
 
     public override void BeginPuzzle() {
@@ -36,10 +45,10 @@ public class Puzzle_One_Controller : Puzzle
     private void GetInput(string Input) {
         // If the input is not equal to the answer key, reset the text box and display "incorrect" message
         if (CheckInput(Input) == false) {
-            randomNumberInput.text = "";
             randomNumberInput.ActivateInputField();
             puzzleStatus.text = "Incorrect\nTry Again";
         }
+        randomNumberInput.text = "";
     }
 
     public override void PuzzleCompleted() {

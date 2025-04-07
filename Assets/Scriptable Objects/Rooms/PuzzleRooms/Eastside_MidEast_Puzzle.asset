@@ -22,5 +22,6 @@ MonoBehaviour:
   backRoom: {fileID: 11400000, guid: 1d459261524562c4086247c4d4641e0e, type: 2}
   leftRoom: {fileID: 0}
   hasPuzzle: 1
-  hasRandomNum: 1
+  hasPuzzleOneNum: 1
+  hasPuzzleFiveNum: 0
   roomPuzzleNum: 1
