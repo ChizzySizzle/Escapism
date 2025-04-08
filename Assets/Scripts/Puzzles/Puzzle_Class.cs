@@ -7,7 +7,7 @@ public class Puzzle : MonoBehaviour
     // PARENT PUZZLE CLASS
 
     // Enum to decide the identity of each puzzle
-    public enum PuzzleNum { one, two, three, four, five, six, seven, eight }
+    public enum PuzzleNum { one, two, three, four, five, six, seven }
     public PuzzleNum puzzleNum;
     // Background for every puzzle
     public GameObject puzzleBackground;

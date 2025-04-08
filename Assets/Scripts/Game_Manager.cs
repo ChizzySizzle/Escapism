@@ -15,6 +15,7 @@ public class Game_Manager : MonoBehaviour
 
     // Private variables
     public float decayAmount = 0;
+    public float attemptNumber = 1;
     private float timerRemainingAmount;
     private bool isFading;
 
@@ -37,6 +38,7 @@ public class Game_Manager : MonoBehaviour
     }
 
     void OnRestart() {
+
         if (decayAmount > 2) {
             GameOver();
         }
@@ -81,13 +83,20 @@ public class Game_Manager : MonoBehaviour
 
     // Called when the player completes all of the puzzles
     public void GameWon() {
+        if (attemptNumber == 1) {
+            // 1st attempt ending
+        }
+        else {
+            // Other attempt ending
+        }
         SceneManager.LoadScene("MenuScreen");
     }
 
     // Called when the player does not complete the puzzles in time
     void GameLost() {
-        onRestart();
         decayAmount++;
+        attemptNumber++;
+        onRestart();
     }
 
     void GameOver() {

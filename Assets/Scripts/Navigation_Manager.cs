@@ -1,4 +1,5 @@
 
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,7 @@ public class Navigation_Manager : MonoBehaviour
     public GameObject compass;
     public GameObject chizzyButton;
     public GameObject puzzleButton;
+    public GameObject puzzleNumberText;
     public GameObject forwardButton;
     public GameObject rightButton;
     public GameObject backButton;
@@ -62,12 +64,15 @@ public class Navigation_Manager : MonoBehaviour
             puzzleButton.SetActive(puzzleRoom.hasPuzzle);
             puzzleOneNumber.SetActive(puzzleRoom.hasPuzzleOneNum);
             puzzleFiveNumber.SetActive(puzzleRoom.hasPuzzleFiveNum);
+            puzzleNumberText.SetActive(true);
+            puzzleNumberText.GetComponent<TMP_Text>().text = puzzleRoom.roomPuzzleNum.ToString();
             puzzleButton.GetComponent<Puzzle_Button_Controller>().SetRoom(puzzleRoom);
         }
         else {
             puzzleButton.SetActive(false);
             puzzleOneNumber.SetActive(false);
             puzzleFiveNumber.SetActive(false);
+            puzzleNumberText.SetActive(false);
         }
 
         if (currentRoom == dialogRoom) {

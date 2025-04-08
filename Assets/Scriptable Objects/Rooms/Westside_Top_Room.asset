@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0598d41b25cc5ec4daf6ec412812ca84, type: 3}
   m_Name: Westside_Top_Room
   m_EditorClassIdentifier: 
-  backgroundImage: {fileID: 21300000, guid: 4f7e4f0333fc6f14c88ed2bff0990f17, type: 3}
+  facing: 0
+  backgroundImage: {fileID: 21300000, guid: cda0467874e102c4195c0e2f89e0e8fe, type: 3}
   hasChizzy: 0
+  hasLeftCabinet: 0
+  hasRightCabinet: 0
   forwardRoom: {fileID: 0}
   rightRoom: {fileID: 11400000, guid: ddb53db9a3a3bc34cbe18b87708568b9, type: 2}
   backRoom: {fileID: 11400000, guid: bc58517206f6a9f4d95406525735c8bd, type: 2}

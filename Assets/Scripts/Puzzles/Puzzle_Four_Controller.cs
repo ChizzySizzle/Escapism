@@ -64,6 +64,7 @@ public class Puzzle_Four_Controller : Puzzle
 
     public override void EndPuzzle() {
         base.EndPuzzle();
+        StopAllCoroutines();
         puzzleText.gameObject.SetActive(false);
         playerInput.gameObject.SetActive(false);
     }

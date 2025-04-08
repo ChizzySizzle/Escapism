@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0598d41b25cc5ec4daf6ec412812ca84, type: 3}
   m_Name: Start_Room
   m_EditorClassIdentifier: 
-  backgroundImage: {fileID: 21300000, guid: b3403dff5f4340142a9496963d54d726, type: 3}
+  facing: 0
+  backgroundImage: {fileID: 21300000, guid: e23ae2b0a93ad4a4bb3baedbd7c92249, type: 3}
   hasChizzy: 1
+  hasLeftCabinet: 0
+  hasRightCabinet: 0
   forwardRoom: {fileID: 11400000, guid: e08e6de8b1a766343abcd62b46de9edd, type: 2}
   rightRoom: {fileID: 11400000, guid: 1d459261524562c4086247c4d4641e0e, type: 2}
   backRoom: {fileID: 11400000, guid: f928cb3f64757b04a94efc27b634bdd6, type: 2}

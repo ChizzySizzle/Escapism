@@ -16,6 +16,7 @@ public class Dialog_Manager : MonoBehaviour
     public Dialog_Message startDialog;
     public Button[] dialogButtons;
     public List<Dialog_Choice> dialogChoices;
+    public string lastMessage;
 
 
     private string playerName = "player";
@@ -39,8 +40,8 @@ public class Dialog_Manager : MonoBehaviour
     }
 
     void OnRestart() {
-        currentDialog = startDialog;
         playerName = "player";
+        currentDialog = startDialog;
 
         foreach (var dialog in dialogChoices) {
             dialog.beenUsed = false;
@@ -68,7 +69,7 @@ public class Dialog_Manager : MonoBehaviour
                 GetUsername();
             }
 
-            string newDialogFormatted = newDialog.dialogMessage.Replace("{player}", playerName);
+            string newDialogFormatted = newDialog.dialogMessage.Replace("{player}", playerName).Replace("{message}", lastMessage);
 
             if (newDialog.dialogChoices.Length > 0) {
                 bool anyLeft = false;
@@ -110,7 +111,10 @@ public class Dialog_Manager : MonoBehaviour
     }
 
     void ShowDiaologOptions(Dialog_Message newDialog) {
+        bool anyShown = false;
+
         for (int i = 0; i < newDialog.dialogChoices.Length; i++) {
+
             if (newDialog.dialogChoices[i].beenUsed == false) {
 
                 bool showOption = true;
@@ -128,8 +132,12 @@ public class Dialog_Manager : MonoBehaviour
                     dialogButtons[i].gameObject.SetActive(true);
                     dialogButtons[i].GetComponentInChildren<TMP_Text>().text = newDialog.dialogChoices[i].choiceText;
                     dialogButtons[i].GetComponent<Dialog_Button_Controller>().choice = newDialog.dialogChoices[i];
+                    anyShown = true;
                 }
             }
+        }
+        if (!anyShown && currentDialog.nextDialog == null) {
+            messageFull = true;
         }
     }
 

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc12f788d13691246bfe500414132a91, type: 3}
+  m_Name: Last_Puzzle
+  m_EditorClassIdentifier: 
+  choiceText: Last puzzle
+  nextMessage: {fileID: 11400000, guid: bc95d34d8a07c0f479aea54a43a0835a, type: 2}
+  choiceRequirements:
+  - {fileID: 11400000, guid: 2f62dae002571cb4aa2d034af9969220, type: 2}
+  beenUsed: 0
+  isRepeatable: 0

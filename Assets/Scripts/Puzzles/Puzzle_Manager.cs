@@ -9,6 +9,7 @@ public class Puzzle_Manager : MonoBehaviour
     public GameObject puzzleBackground;
     public List<PuzzleRoom> puzzleRooms= new List<PuzzleRoom>();
     public Dialog_Requirement hasDonePuzzle;
+    public Dialog_Requirement onLastPuzzle;
 
     private Puzzle[] puzzles;
     private int completedPuzzles;
@@ -36,6 +37,7 @@ public class Puzzle_Manager : MonoBehaviour
             room.hasPuzzle = true;
         }
         hasDonePuzzle.isSatisfied = false;
+        onLastPuzzle.isSatisfied = false;
 
         completedPuzzles = 0;
 
@@ -56,10 +58,14 @@ public class Puzzle_Manager : MonoBehaviour
 
     public void AddCompletedPuzzle() {
         completedPuzzles++;
+
         if (completedPuzzles == 1) {
             hasDonePuzzle.isSatisfied = true;
         }
-        else if (completedPuzzles > 4) {
+        else if (completedPuzzles > 5) {
+            onLastPuzzle.isSatisfied = true;
+        }
+        else if (completedPuzzles > 6) {
             Game_Manager.instance.GameWon();
         }
         currentPuzzleRoom.hasPuzzle = false;

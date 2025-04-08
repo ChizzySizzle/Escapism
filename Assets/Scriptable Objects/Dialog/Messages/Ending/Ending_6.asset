@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 045a40df3f38ab44586b9b9d00a69f67, type: 3}
-  m_Name: Encourage
+  m_Name: Ending_6
   m_EditorClassIdentifier: 
-  dialogMessage: You're doing great {player}!
-  dialogChoices:
-  - {fileID: 11400000, guid: c5c47c0960191fd4eabd3498c214741c, type: 2}
-  nextDialog: {fileID: 0}
-  emotion: {fileID: 21300000, guid: b76e24ec371c50c4eb927ff99cae8eb1, type: 3}
+  dialogMessage: So you're leaving then?
+  dialogChoices: []
+  nextDialog: {fileID: 11400000, guid: 754de055152ca6049b4383313d23e39f, type: 2}
+  emotion: {fileID: 21300000, guid: c4216a0f591f6c441b2e085ebfa45a99, type: 3}
   isEnd: 0

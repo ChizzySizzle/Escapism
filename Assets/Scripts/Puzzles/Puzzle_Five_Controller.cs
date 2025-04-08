@@ -19,6 +19,7 @@ public class Puzzle_Five_Controller : Puzzle
 
     public override void OnRestart() {
         string randomString = "";
+        puzzleFiveNumber.text = "";
 
         for (int i = 0; i < scrollbars.Length; i++) {
             int randomNum = Random.Range(0,6);
@@ -66,6 +67,7 @@ public class Puzzle_Five_Controller : Puzzle
 
     public override void EndPuzzle() {
         for (int i = 0; i < scrollbars.Length; i++) {
+            scrollbars[i].value = 0;
             scrollbars[i].gameObject.SetActive(false);
         }
         base.EndPuzzle();
