@@ -12,6 +12,8 @@ public class Puzzle_Four_Controller : Puzzle
     public override void Start() {
         // Call parent class start
         base.Start();
+
+        playerInput.onSubmit.AddListener(GetInput);
         // Call the restart function
         OnRestart();
     }
@@ -31,8 +33,6 @@ public class Puzzle_Four_Controller : Puzzle
         }
         puzzleText.gameObject.SetActive(true);
         playerInput.gameObject.SetActive(true);
-
-        playerInput.onSubmit.AddListener(GetInput);
     }
 
     private void GetInput(string input) {
