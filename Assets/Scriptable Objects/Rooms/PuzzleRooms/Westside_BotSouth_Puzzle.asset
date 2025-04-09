@@ -15,10 +15,14 @@ MonoBehaviour:
   facing: 2
   backgroundImage: {fileID: 21300000, guid: 5313aa0cc95356349b3dfc508bb2899b, type: 3}
   hasChizzy: 0
+  hasBox: 0
+  hasLeftCabinet: 0
+  hasRightCabinet: 0
   forwardRoom: {fileID: 0}
   rightRoom: {fileID: 0}
   backRoom: {fileID: 11400000, guid: e41356342dfe9f54fbfb1798db2a4bfe, type: 2}
   leftRoom: {fileID: 0}
   hasPuzzle: 1
-  hasRandomNum: 0
+  hasPuzzleOneNum: 0
+  hasPuzzleFiveNum: 0
   roomPuzzleNum: 5

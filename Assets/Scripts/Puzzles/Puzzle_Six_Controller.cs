@@ -26,7 +26,7 @@ public class Puzzle_Six_Controller : Puzzle
         possibleRotations[0] = 0;
         possibleRotations[1] = 90;
         possibleRotations[2] = 180;
-        possibleRotations[3] = -90;
+        possibleRotations[3] = 270;
 
         // Call the restart function
         OnRestart();

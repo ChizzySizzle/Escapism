@@ -12,9 +12,11 @@ public class Game_Manager : MonoBehaviour
     public TMP_Text timerText;
     public Image gameOverlay;
     public Dialog_Requirement onRemembered;
+    public Room boxRoom;
     public float timerStartAmount = 5;
 
     // Private variables
+    public int probability = 20;
     public float decayAmount = 0;
     public float attemptNumber = 1;
     private float timerRemainingAmount;
@@ -34,18 +36,24 @@ public class Game_Manager : MonoBehaviour
     
     void Start()
     {
-        int randomNum = Random.Range(0, 25);
-        if (randomNum == 1) {
-            onRemembered.isSatisfied = true;
-        }
-        else {
-            onRemembered.isSatisfied = false;
-        }
         onRestart += OnRestart;
         OnRestart();
     }
 
     void OnRestart() {
+
+        int randomNum = Random.Range(0, probability);
+
+        if (randomNum == 1 && attemptNumber == 1) {
+            onRemembered.isSatisfied = true;
+        }
+        else if (randomNum == 2) {
+            boxRoom.hasBox = true;
+        }
+        else {
+            onRemembered.isSatisfied = false;
+            boxRoom.hasBox = false;
+        }
 
         if (decayAmount > 2) {
             GameOver();
@@ -85,19 +93,21 @@ public class Game_Manager : MonoBehaviour
 
         // Begin fading out when the player has run out of time
         if (timerRemainingAmount <= 0 && isFading == false) {
-            StartCoroutine("FadeOut");
+            StartCoroutine(FadeOut("Restart"));
         }
     }
 
     // Called when the player completes all of the puzzles
     public void GameWon() {
+        StopAllCoroutines();
+        
         if (attemptNumber == 1) {
             // 1st attempt ending
         }
         else {
             // Other attempt ending
         }
-        SceneManager.LoadScene("Ending_1");
+        StartCoroutine(FadeOut("Win"));
     }
 
     // Called when the player does not complete the puzzles in time
@@ -124,7 +134,7 @@ public class Game_Manager : MonoBehaviour
         isFading = false;
     }
 
-    IEnumerator FadeOut() {
+    IEnumerator FadeOut(string nextMethod) {
         isFading = true;
 
         while (gameOverlay.color.a < 1) {
@@ -135,6 +145,11 @@ public class Game_Manager : MonoBehaviour
         }
         isFading = false;
 
-        GameLost();
+        if (nextMethod == "Restart") {
+            GameLost();
+        }
+        if (nextMethod == "Win") {
+            SceneManager.LoadScene("Ending_1");
+        }
     }
 }

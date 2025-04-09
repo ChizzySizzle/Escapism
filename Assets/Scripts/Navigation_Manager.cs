@@ -12,6 +12,7 @@ public class Navigation_Manager : MonoBehaviour
     public Room dialogRoom;
     public Image backgroundImage;
     public GameObject compass;
+    public GameObject box;
     public GameObject chizzyButton;
     public GameObject puzzleButton;
     public GameObject puzzleNumberText;
@@ -54,6 +55,7 @@ public class Navigation_Manager : MonoBehaviour
         leftButton.SetActive(currentRoom.leftRoom != null);
 
         chizzyButton.SetActive(currentRoom.hasChizzy);
+        box.SetActive(currentRoom.hasBox);
 
         rightCabinet.SetActive(currentRoom.hasRightCabinet);
         leftCabinet.SetActive(currentRoom.hasLeftCabinet);
