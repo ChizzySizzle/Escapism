@@ -58,14 +58,16 @@ public class Puzzle_Manager : MonoBehaviour
 
     public void AddCompletedPuzzle() {
         completedPuzzles++;
+        Debug.Log(completedPuzzles);
 
         if (completedPuzzles == 1) {
             hasDonePuzzle.isSatisfied = true;
         }
-        else if (completedPuzzles > 5) {
+        else if (completedPuzzles == 6) {
             onLastPuzzle.isSatisfied = true;
         }
-        else if (completedPuzzles > 6) {
+        else if (completedPuzzles == 7) {
+            Debug.Log("you have won");
             Game_Manager.instance.GameWon();
         }
         currentPuzzleRoom.hasPuzzle = false;

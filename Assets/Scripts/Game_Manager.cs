@@ -11,6 +11,7 @@ public class Game_Manager : MonoBehaviour
     public static Game_Manager instance;
     public TMP_Text timerText;
     public Image gameOverlay;
+    public Dialog_Requirement onRemembered;
     public float timerStartAmount = 5;
 
     // Private variables
@@ -33,8 +34,15 @@ public class Game_Manager : MonoBehaviour
     
     void Start()
     {
+        int randomNum = Random.Range(0, 25);
+        if (randomNum == 1) {
+            onRemembered.isSatisfied = true;
+        }
+        else {
+            onRemembered.isSatisfied = false;
+        }
         onRestart += OnRestart;
-        onRestart();
+        OnRestart();
     }
 
     void OnRestart() {
@@ -89,7 +97,7 @@ public class Game_Manager : MonoBehaviour
         else {
             // Other attempt ending
         }
-        SceneManager.LoadScene("MenuScreen");
+        SceneManager.LoadScene("Ending_1");
     }
 
     // Called when the player does not complete the puzzles in time
