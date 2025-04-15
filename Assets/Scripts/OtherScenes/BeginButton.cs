@@ -1,3 +1,4 @@
+
 using UnityEngine.SceneManagement;
 
 public class BeginButton : ButtonClass
@@ -9,6 +10,7 @@ public class BeginButton : ButtonClass
 
     public override void OnButtonClick() {
         base.OnButtonClick();
+        // Load the main scene
         SceneManager.LoadScene("Main");
     }
 }

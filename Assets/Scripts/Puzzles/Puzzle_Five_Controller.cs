@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Puzzle_Five_Controller : Puzzle
 {
     public Scrollbar[] scrollbars;
+    public Button submitButton;
+    public string playerInput;
 
     private TMP_Text puzzleFiveNumber;
     private int lastValueChange = 0;
@@ -13,6 +15,8 @@ public class Puzzle_Five_Controller : Puzzle
     public override void Start() {
         base.Start();
         puzzleFiveNumber = Navigation_Manager.instance.puzzleFiveNumber.GetComponent<TMP_Text>();
+
+        submitButton.onClick.AddListener(SubmitInput);
 
         OnRestart();
     }
@@ -35,27 +39,31 @@ public class Puzzle_Five_Controller : Puzzle
         for (int i = 0; i < scrollbars.Length; i++) {
             scrollbars[i].gameObject.SetActive(true);
         }
+        submitButton.gameObject.SetActive(true);
         base.BeginPuzzle();
     }
 
     public void ChangeInput(Scrollbar scrollbar) {
-        string playerInput = "";
-
         int value = (int)(scrollbar.value * 6);
 
         if (value != lastValueChange) {
+            playerInput = "";
             foreach (Scrollbar bar in scrollbars) {
                 playerInput += ((int)(bar.value * 6 - .01)).ToString();
             }
-            GetInput(playerInput);
-
             lastValueChange = value;
+            puzzleStatus.text = playerInput;
         }
+    }
+
+    public void SubmitInput() {
+        GetInput(playerInput);
+        Debug.Log(playerInput);
+        Debug.Log(keyString);
     }
 
     public void GetInput(string input) {
         if (CheckInput(input) == false) {
-            puzzleStatus.text = input;
         }
     }
 
@@ -70,6 +78,7 @@ public class Puzzle_Five_Controller : Puzzle
             scrollbars[i].value = 0;
             scrollbars[i].gameObject.SetActive(false);
         }
+        submitButton.gameObject.SetActive(false);
         base.EndPuzzle();
     }
 }

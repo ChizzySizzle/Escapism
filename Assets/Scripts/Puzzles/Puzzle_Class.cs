@@ -32,6 +32,8 @@ public class Puzzle : MonoBehaviour
         puzzleBackground.SetActive(true);
         puzzleStatus.gameObject.SetActive(true);
         puzzleStatus.text = "";
+        // play puzzle opened sound
+        Game_Manager.instance.audioSource.PlayOneShot(Puzzle_Manager.instance.puzzleOpened);
     }
 
     // Check if the players input is equal to the answer key
@@ -41,8 +43,11 @@ public class Puzzle : MonoBehaviour
             PuzzleCompleted();
             return true;
         }
-        // is it is not correct, return that the input was false
-        else return false;
+        // is it is not correct, return that the input was false and play incorrect sound
+        else {
+            Game_Manager.instance.audioSource.PlayOneShot(Puzzle_Manager.instance.puzzleIncorrect);
+            return false;
+        }
     }
 
     // Tell the puzzle manager when each puzzle has been completed

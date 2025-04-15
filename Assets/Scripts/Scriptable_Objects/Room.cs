@@ -9,6 +9,7 @@ public class Room : ScriptableObject
     public Sprite backgroundImage;
     public bool hasChizzy;
     public bool hasBox;
+    public bool hasTharacia;
     public bool hasLeftCabinet;
     public bool hasRightCabinet;
     public Room forwardRoom;

@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Compass_Controller : MonoBehaviour
 {
+    // No longer being used
+    
+    /*
     public Image compassImage;
     public Sprite compNorth;
     public Sprite compEast;
@@ -27,4 +30,5 @@ public class Compass_Controller : MonoBehaviour
         else
             compassImage.sprite = null;
     }
+    */
 }

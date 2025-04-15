@@ -13,19 +13,27 @@ public class Game_Manager : MonoBehaviour
     public Image gameOverlay;
     public Dialog_Requirement onRemembered;
     public Room boxRoom;
+    public Room tharaciaRoom;
+    // Public variables
     public float timerStartAmount = 5;
+    public int probability = 20;
+    public AudioSource audioSource;
+    public AudioClip beginAudio;
+    public AudioClip backgroundMusic;
 
     // Private variables
-    public int probability = 20;
-    public float decayAmount = 0;
-    public float attemptNumber = 1;
+    private float decayAmount = 0;
+    private float attemptNumber = 1;
     private float timerRemainingAmount;
     private bool isFading;
 
+
+    // Define a delegate called restart for the restart event
     public delegate void Restart();
+    // Declare an event based on the delegate
     public event Restart onRestart;
 
-    // Singleton
+    // Singleton for the game manager
     void Awake()
     {
         if (instance == null)
@@ -36,28 +44,55 @@ public class Game_Manager : MonoBehaviour
     
     void Start()
     {
+        // initialize the audioSource
+        audioSource = GetComponent<AudioSource>();
+
+        // Add the on restart method to the on restart event
         onRestart += OnRestart;
+        // Call the game restart to begin the game
         OnRestart();
     }
 
+    // Called when the game is started / restarted
     void OnRestart() {
+        // Stop any current audio
+        audioSource.Stop();
+        // Play the begin game sound
+        audioSource.PlayOneShot(beginAudio);
+        // Begin the background music
+        audioSource.PlayOneShot(backgroundMusic);
 
-        int randomNum = Random.Range(0, probability);
+        // Set a random number based on the range of the probability variable
+        int randomProbabilityNum = Random.Range(0, probability);
 
-        if (randomNum == 1 && attemptNumber == 1) {
-            onRemembered.isSatisfied = true;
-        }
-        else if (randomNum == 2) {
-            boxRoom.hasBox = true;
-        }
-        else {
-            onRemembered.isSatisfied = false;
-            boxRoom.hasBox = false;
-        }
+        // Define booleans to store the condition's status
+        bool remembered = false;
+        bool boxPresent = false;
+        bool tharaciaPresent = false;
 
-        if (decayAmount > 2) {
+        // If the random probability number is 1, and the player is on their first attempt, they may "remember"
+        // If on remember is satisfied, an additional dialog choice will be available to the player in part 1 of the dialog
+        if (randomProbabilityNum == 1 && attemptNumber == 1) {
+            remembered = true;
+        }
+        // if the random probability number is 2, the Box character may appear in the room containing puzzle six
+        else if (randomProbabilityNum == 2) {
+            boxPresent = true;
+        }
+        // if the randomd probability is 3, the tharacia character may appear in the north room
+        else if (randomProbabilityNum == 3) {
+            tharaciaPresent = true;
+        }
+        // Set the conditions based on the random boolean values
+        onRemembered.isSatisfied = remembered;
+        boxRoom.hasBox = boxPresent;
+        tharaciaRoom.hasTharacia = tharaciaPresent;
+
+        // If the the player has exceeded three attempts, the player loses
+        if (attemptNumber > 3) {
             GameOver();
         }
+        // Otherwise, restart the timer and start the fade in coroutine
         else {
             timerRemainingAmount = timerStartAmount * 60;
 
@@ -77,6 +112,7 @@ public class Game_Manager : MonoBehaviour
         // Get the remaining seconds for each minute from the total seconds
         int secondsRemaining = totalSecondsRemaining % 60;
 
+        // Do not show negative seconds remainging after the timer reaches zero
         if (secondsRemaining < 0) {
             secondsRemaining = 0;
         }
@@ -91,7 +127,7 @@ public class Game_Manager : MonoBehaviour
         // Set the timer text with formatted minutes and seconds
         timerText.text = minutesRemaining + ":" + secondsformatted;
 
-        // Begin fading out when the player has run out of time
+        // Begin fading out when the player has run out of time, don't run the restart if the player is already fading
         if (timerRemainingAmount <= 0 && isFading == false) {
             StartCoroutine(FadeOut("Restart"));
         }
@@ -99,6 +135,7 @@ public class Game_Manager : MonoBehaviour
 
     // Called when the player completes all of the puzzles
     public void GameWon() {
+        // Stop any current fading coroutines
         StopAllCoroutines();
         
         if (attemptNumber == 1) {
@@ -112,19 +149,25 @@ public class Game_Manager : MonoBehaviour
 
     // Called when the player does not complete the puzzles in time
     void GameLost() {
+        // Increase the display haze
         decayAmount++;
+        // Increase the attempt number
         attemptNumber++;
+        // Call the restart event
         onRestart();
     }
 
+    // Load the game over scene when the player loses
     void GameOver() {
         SceneManager.LoadScene("GameOver");
     }
 
+    // Coroutine to gradually decrease the overlay alpha when the player starts / restarts
     IEnumerator FadeIn() {
         isFading = true;
 
-        while (gameOverlay.color.a > decayAmount/4) {
+        // While the alpha is below the max, increase the alpha gradually
+        while (gameOverlay.color.a > decayAmount/3) {
             Color newColor = gameOverlay.color;
             newColor.a -= .05f;
             gameOverlay.color = newColor;
@@ -134,9 +177,11 @@ public class Game_Manager : MonoBehaviour
         isFading = false;
     }
 
+    // Start coroutine to increse the alpha on the overlay, accepts an argument to decide what function to execute next
     IEnumerator FadeOut(string nextMethod) {
         isFading = true;
 
+        // While the alpha is below the minimum, decrease the alpha gradually
         while (gameOverlay.color.a < 1) {
             Color newColor = gameOverlay.color;
             newColor.a += .025f;
@@ -145,11 +190,17 @@ public class Game_Manager : MonoBehaviour
         }
         isFading = false;
 
+        // If the string passed is restart, call the game lost method
         if (nextMethod == "Restart") {
             GameLost();
         }
-        if (nextMethod == "Win") {
+        // If the string passed is Win, load the win screen for the first ending
+        else if (nextMethod == "Win") {
             SceneManager.LoadScene("Ending_1");
+        }
+        // Log and error if the string passed to the argument is not valid
+        else {
+            Debug.LogError("Invalid argument passed to the Fade Out coroutine");
         }
     }
 }

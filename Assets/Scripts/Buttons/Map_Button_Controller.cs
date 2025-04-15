@@ -9,11 +9,15 @@ public class Map_Button_Controller : ButtonClass
     public Vector3 correctRotation;
 
     private Puzzle_Six_Controller puzzleSix;
-
+    
     public override void Start()
     {
         base.Start();
         puzzleSix = FindObjectOfType<Puzzle_Six_Controller>();
+    }
+
+    public void SetCorrectRotation() {
+        correctRotation = transform.rotation.eulerAngles;
     }
 
     public override void OnButtonClick() {

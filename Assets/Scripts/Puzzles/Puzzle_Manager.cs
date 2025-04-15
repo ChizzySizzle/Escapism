@@ -10,6 +10,9 @@ public class Puzzle_Manager : MonoBehaviour
     public List<PuzzleRoom> puzzleRooms= new List<PuzzleRoom>();
     public Dialog_Requirement hasDonePuzzle;
     public Dialog_Requirement onLastPuzzle;
+    public AudioClip puzzleOpened;
+    public AudioClip puzzleComplete;
+    public AudioClip puzzleIncorrect;
 
     private Puzzle[] puzzles;
     private int completedPuzzles;
@@ -46,6 +49,8 @@ public class Puzzle_Manager : MonoBehaviour
 
     public void GetRoomPuzzle(PuzzleRoom currentRoom) {
         currentPuzzleRoom = currentRoom;
+
+        Game_Manager.instance.audioSource.PlayOneShot(puzzleOpened);
  
         foreach (Puzzle puzzle in puzzles) {
             if (currentRoom.roomPuzzleNum == puzzle.puzzleNum) {
@@ -58,6 +63,7 @@ public class Puzzle_Manager : MonoBehaviour
 
     public void AddCompletedPuzzle() {
         completedPuzzles++;
+        Game_Manager.instance.audioSource.PlayOneShot(puzzleComplete);
 
         if (completedPuzzles == 1) {
             hasDonePuzzle.isSatisfied = true;

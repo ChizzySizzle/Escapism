@@ -18,6 +18,8 @@ public class Puzzle_Six_Controller : Puzzle
         pieces = FindObjectsOfType<Map_Button_Controller>();
 
         foreach (Map_Button_Controller piece in pieces) {
+            piece.SetCorrectRotation();
+
             if (piece.affectsAnswer) {
                 answerPieces.Add(piece);
             }
@@ -38,8 +40,6 @@ public class Puzzle_Six_Controller : Puzzle
         base.OnRestart();
 
         foreach (Map_Button_Controller piece in pieces) {
-
-            piece.correctRotation = piece.transform.rotation.eulerAngles;
 
             int randomNum = Random.Range(0,4);
             int randomRotation = possibleRotations[randomNum];

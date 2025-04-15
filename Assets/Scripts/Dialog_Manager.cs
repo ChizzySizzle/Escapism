@@ -17,6 +17,7 @@ public class Dialog_Manager : MonoBehaviour
     public Button[] dialogButtons;
     public List<Dialog_Choice> dialogChoices;
     public string lastMessage;
+    public AudioClip chizzyVoice;
 
 
     private string playerName = "player";
@@ -34,6 +35,8 @@ public class Dialog_Manager : MonoBehaviour
     {        
         TMP_InputField inputField = userInput.GetComponent<TMP_InputField>();
         inputField.onSubmit.AddListener(SetUsername);
+
+        
 
         Game_Manager.instance.onRestart += OnRestart;
         OnRestart();
@@ -100,7 +103,8 @@ public class Dialog_Manager : MonoBehaviour
                 break;
             }
             dialogText.text += c;
-            yield return new WaitForSeconds(.05f);
+            Game_Manager.instance.audioSource.PlayOneShot(chizzyVoice, Random.Range(0.8f, 1f));
+            yield return new WaitForSeconds(Random.Range(0.03f, 0.08f));
         }
         if (currentDialog.dialogChoices.Length > 0) {
             ShowDiaologOptions(currentDialog);
