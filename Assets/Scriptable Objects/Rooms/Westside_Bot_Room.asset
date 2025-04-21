@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Westside_Bot_Room
   m_EditorClassIdentifier: 
   facing: 2
-  backgroundImage: {fileID: 21300000, guid: 2bf6264adad877b4aae0eb56d56b9956, type: 3}
+  backgroundImage: {fileID: 21300000, guid: 583933cd04f67f64d8cc460553c0bf2c, type: 3}
   hasChizzy: 0
+  hasBox: 0
+  hasTharacia: 0
   hasLeftCabinet: 0
   hasRightCabinet: 1
   forwardRoom: {fileID: 11400000, guid: f250dcaf2f8d73648a812864d3678aa0, type: 2}

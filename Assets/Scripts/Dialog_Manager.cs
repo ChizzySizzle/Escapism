@@ -8,18 +8,22 @@ using UnityEngine.UI;
 
 public class Dialog_Manager : MonoBehaviour
 {
+    // public references
     public static Dialog_Manager instance;
+    [Header("Scene Objects")]
     public Image chizzyImage;
     public Image dialogBox;
     public TMP_Text dialogText;
     public GameObject userInput;
-    public Dialog_Message startDialog;
     public Button[] dialogButtons;
+    [Header("Dialog Objects")]
+    public Dialog_Message startDialog;
     public List<Dialog_Choice> dialogChoices;
     public string lastMessage;
+    [Header("Audio")]
     public AudioClip chizzyVoice;
 
-
+    // Private variables
     private string playerName = "player";
     private Dialog_Message currentDialog;
     private bool cont = false;
@@ -35,8 +39,6 @@ public class Dialog_Manager : MonoBehaviour
     {        
         TMP_InputField inputField = userInput.GetComponent<TMP_InputField>();
         inputField.onSubmit.AddListener(SetUsername);
-
-        
 
         Game_Manager.instance.onRestart += OnRestart;
         OnRestart();

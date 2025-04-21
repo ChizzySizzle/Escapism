@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Chizzy_Dialog
   m_EditorClassIdentifier: 
   facing: 4
-  backgroundImage: {fileID: 21300000, guid: e23ae2b0a93ad4a4bb3baedbd7c92249, type: 3}
+  backgroundImage: {fileID: 21300000, guid: 0f655431f739e304097f0b74c78bb767, type: 3}
   hasChizzy: 0
+  hasBox: 0
+  hasTharacia: 0
   hasLeftCabinet: 0
   hasRightCabinet: 0
   forwardRoom: {fileID: 0}

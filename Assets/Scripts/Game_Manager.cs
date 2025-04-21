@@ -7,19 +7,22 @@ using UnityEngine.SceneManagement;
 
 public class Game_Manager : MonoBehaviour
 {
-    // public references
+    // Public variables
     public static Game_Manager instance;
+    [Header("Scene Objects")]
     public TMP_Text timerText;
     public Image gameOverlay;
+    [Header("Scriptable Objects")]
     public Dialog_Requirement onRemembered;
     public Room boxRoom;
     public Room tharaciaRoom;
-    // Public variables
-    public float timerStartAmount = 5;
-    public int probability = 20;
+    [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip beginAudio;
     public AudioClip backgroundMusic;
+    [Header("Gameplay Variables")]
+    public float timerStartAmount = 5;
+    public int probability = 20;
 
     // Private variables
     private float decayAmount = 0;
@@ -40,10 +43,11 @@ public class Game_Manager : MonoBehaviour
             instance = this;
         else 
             Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
     
     void Start()
-    {
+    {        
         // initialize the audioSource
         audioSource = GetComponent<AudioSource>();
 
@@ -55,8 +59,6 @@ public class Game_Manager : MonoBehaviour
 
     // Called when the game is started / restarted
     void OnRestart() {
-        // Stop any current audio
-        audioSource.Stop();
         // Play the begin game sound
         audioSource.PlayOneShot(beginAudio);
         // Begin the background music
@@ -190,8 +192,12 @@ public class Game_Manager : MonoBehaviour
         }
         isFading = false;
 
+        // Stop any current audio
+        audioSource.Stop();
+
         // If the string passed is restart, call the game lost method
         if (nextMethod == "Restart") {
+
             GameLost();
         }
         // If the string passed is Win, load the win screen for the first ending

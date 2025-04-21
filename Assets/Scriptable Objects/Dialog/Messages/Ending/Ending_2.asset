@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045a40df3f38ab44586b9b9d00a69f67, type: 3}
   m_Name: Ending_2
   m_EditorClassIdentifier: 
-  dialogMessage: And you need need a message from me?
+  dialogMessage: And you need a message from me?
   dialogChoices: []
   nextDialog: {fileID: 11400000, guid: 8820b6fb0232e414692f990516788bde, type: 2}
   emotion: {fileID: 21300000, guid: ce6b79f9285de5e4ea75ef273355e0e2, type: 3}

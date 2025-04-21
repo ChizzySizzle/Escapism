@@ -4983,10 +4983,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentRoom: {fileID: 0}
+  backgroundImage: {fileID: 1558172732}
   startRoom: {fileID: 11400000, guid: 1ad27b0c83f24c944b90561fba3b5d6c, type: 2}
   dialogRoom: {fileID: 11400000, guid: f928cb3f64757b04a94efc27b634bdd6, type: 2}
-  backgroundImage: {fileID: 1558172732}
   switchRoomsAudio: {fileID: 8300000, guid: ee82e6eba1de352408eb8c1bb1f7e6ec, type: 3}
+  rightCabinet: {fileID: 1448236108}
+  leftCabinet: {fileID: 939995506}
+  puzzleOneNumber: {fileID: 1903156031}
+  puzzleFiveNumber: {fileID: 445642356}
   box: {fileID: 1799221064}
   tharacia: {fileID: 1461422960}
   chizzyButton: {fileID: 795636448}
@@ -4996,10 +5000,6 @@ MonoBehaviour:
   rightButton: {fileID: 245896911}
   backButton: {fileID: 556577447}
   leftButton: {fileID: 1807848440}
-  rightCabinet: {fileID: 1448236108}
-  leftCabinet: {fileID: 939995506}
-  puzzleOneNumber: {fileID: 1903156031}
-  puzzleFiveNumber: {fileID: 445642356}
 --- !u!4 &910639638
 Transform:
   m_ObjectHideFlags: 0
@@ -5031,10 +5031,10 @@ MonoBehaviour:
   dialogBox: {fileID: 1730478317}
   dialogText: {fileID: 476740819}
   userInput: {fileID: 1975509533}
-  startDialog: {fileID: 11400000, guid: 044ef269b0d228046a4275019647ba00, type: 2}
   dialogButtons:
   - {fileID: 1776792656}
   - {fileID: 900112459}
+  startDialog: {fileID: 11400000, guid: 044ef269b0d228046a4275019647ba00, type: 2}
   dialogChoices:
   - {fileID: 11400000, guid: ca72b8dae095d0f4784d9a06676e638b, type: 2}
   - {fileID: 11400000, guid: 46163c557a60690438e66ebe0c0cac15, type: 2}
@@ -5059,6 +5059,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c54a960488af6746aeac7aa91a7285b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasDonePuzzle: {fileID: 11400000, guid: 780bab0f140240b438d2bb95868f97f1, type: 2}
+  onLastPuzzle: {fileID: 11400000, guid: 2f62dae002571cb4aa2d034af9969220, type: 2}
+  puzzleOpened: {fileID: 8300000, guid: a27af5f721527c946974626318667772, type: 3}
+  puzzleComplete: {fileID: 8300000, guid: 384f94cc3be534643b2511630a8d5a6a, type: 3}
+  puzzleIncorrect: {fileID: 8300000, guid: 18e23d866db44b64bb014b656deddef2, type: 3}
+  buttonPressed: {fileID: 8300000, guid: d7a60b77fc3d2f34aa61791d7976a471, type: 3}
+  numPuzzlesDoneText: {fileID: 2084775394}
   puzzleBackground: {fileID: 311064901}
   puzzleRooms:
   - {fileID: 11400000, guid: 1a828f90d7aa27e408d05b02511bc613, type: 2}
@@ -5068,11 +5075,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b3ef99b89ee89ae4eb1f008c706f6077, type: 2}
   - {fileID: 11400000, guid: f250dcaf2f8d73648a812864d3678aa0, type: 2}
   - {fileID: 11400000, guid: ddb53db9a3a3bc34cbe18b87708568b9, type: 2}
-  hasDonePuzzle: {fileID: 11400000, guid: 780bab0f140240b438d2bb95868f97f1, type: 2}
-  onLastPuzzle: {fileID: 11400000, guid: 2f62dae002571cb4aa2d034af9969220, type: 2}
-  puzzleOpened: {fileID: 8300000, guid: a27af5f721527c946974626318667772, type: 3}
-  puzzleComplete: {fileID: 8300000, guid: 384f94cc3be534643b2511630a8d5a6a, type: 3}
-  puzzleIncorrect: {fileID: 8300000, guid: 18e23d866db44b64bb014b656deddef2, type: 3}
 --- !u!114 &910639641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5143,11 +5145,11 @@ MonoBehaviour:
   onRemembered: {fileID: 11400000, guid: 6aacfa434dc103e4b84f4bc0515a2e90, type: 2}
   boxRoom: {fileID: 11400000, guid: f250dcaf2f8d73648a812864d3678aa0, type: 2}
   tharaciaRoom: {fileID: 11400000, guid: e08e6de8b1a766343abcd62b46de9edd, type: 2}
-  timerStartAmount: 5
-  probability: 15
   audioSource: {fileID: 0}
   beginAudio: {fileID: 8300000, guid: 755a14f76c23c8b499985dd47ef45f15, type: 3}
   backgroundMusic: {fileID: 8300000, guid: e6c422c1b2d0fbf4184bc378d7b32c7e, type: 3}
+  timerStartAmount: 5
+  probability: 15
 --- !u!82 &910639644
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5158,7 +5160,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e6c422c1b2d0fbf4184bc378d7b32c7e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.75
   m_Pitch: 1
@@ -5619,6 +5621,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2084775393}
   - {fileID: 1730478316}
   - {fileID: 550002970}
   - {fileID: 780094323}
@@ -7208,7 +7211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1293103977
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12112,6 +12115,140 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!1 &2084775392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2084775393}
+  - component: {fileID: 2084775395}
+  - component: {fileID: 2084775394}
+  m_Layer: 5
+  m_Name: Num_of_Puzzles_Done
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2084775393
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084775392}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 958369221}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.8927761, y: 0.01636868}
+  m_AnchorMax: {x: 0.989, y: 0.19110605}
+  m_AnchoredPosition: {x: 0.41967773, y: -0.021057129}
+  m_SizeDelta: {x: -2.8394165, y: -0.87950134}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2084775394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084775392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 0
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 993267f64050d2746a1cb8f650a5b2b3, type: 2}
+  m_sharedMaterial: {fileID: 3492529164394882806, guid: 993267f64050d2746a1cb8f650a5b2b3, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 3355508480
+  m_fontColor: {r: 0, g: 1, b: 0, a: 0.78431374}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 64
+  m_fontSizeBase: 64
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 1024
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -1.1452637, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &2084775395
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084775392}
+  m_CullTransparentMesh: 1
 --- !u!1 &2124301735
 GameObject:
   m_ObjectHideFlags: 0

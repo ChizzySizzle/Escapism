@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Compass_Controller : MonoBehaviour
 {
-    // No longer being used
+    ////////////////////////// No longer being used ///////////////////////////
     
     /*
     public Image compassImage;

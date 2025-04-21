@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: Eastside_Bot_Room
   m_EditorClassIdentifier: 
   facing: 2
-  backgroundImage: {fileID: 21300000, guid: 4f7e4f0333fc6f14c88ed2bff0990f17, type: 3}
+  backgroundImage: {fileID: 21300000, guid: d8efb0c06d7fcc9428a12431681bc472, type: 3}
   hasChizzy: 0
+  hasBox: 0
+  hasTharacia: 0
+  hasLeftCabinet: 0
+  hasRightCabinet: 0
   forwardRoom: {fileID: 0}
   rightRoom: {fileID: 11400000, guid: 6ac614fcb19d9c2479cd6e9cde7713a4, type: 2}
   backRoom: {fileID: 11400000, guid: 1d459261524562c4086247c4d4641e0e, type: 2}

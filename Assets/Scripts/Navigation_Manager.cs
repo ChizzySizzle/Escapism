@@ -3,33 +3,37 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class Navigation_Manager : MonoBehaviour
 {
     // public references
     public static Navigation_Manager instance;
+    [Header("Room references")]
     public Room currentRoom;
+    public Image backgroundImage;
     public Room startRoom;
     public Room dialogRoom;
-    public Image backgroundImage;
     public AudioClip switchRoomsAudio;
-    // No longer being used
-    // public GameObject compass;
-    public GameObject box;
-    public GameObject tharacia;
-    public GameObject chizzyButton;
-    public GameObject puzzleButton;
-    public GameObject puzzleNumberText;
-    public GameObject forwardButton;
-    public GameObject rightButton;
-    public GameObject backButton;
-    public GameObject leftButton;
+    [Header("Room Objects")]
     public GameObject rightCabinet;
     public GameObject leftCabinet;
     public GameObject puzzleOneNumber;
     public GameObject puzzleFiveNumber;
+    public GameObject box;
+    public GameObject tharacia;
+    public GameObject chizzyButton;
+    [Header("Puzzle Objects")]
+    public GameObject puzzleButton;
+    public GameObject puzzleNumberText;
+    [Header("Direction Buttons")]
+    public GameObject forwardButton;
+    public GameObject rightButton;
+    public GameObject backButton;
+    public GameObject leftButton;
+    // No longer being used
+    // public GameObject compass;
 
-    // Private references
+
+    // private references
     // private Compass_Controller compassController;
     
     // Set the publically accessible instance
