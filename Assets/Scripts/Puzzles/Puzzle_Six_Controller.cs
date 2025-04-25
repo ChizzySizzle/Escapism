@@ -41,6 +41,8 @@ public class Puzzle_Six_Controller : Puzzle
 
         foreach (Map_Button_Controller piece in pieces) {
 
+            piece.isInPlace = false;
+
             int randomNum = Random.Range(0,4);
             int randomRotation = possibleRotations[randomNum];
 

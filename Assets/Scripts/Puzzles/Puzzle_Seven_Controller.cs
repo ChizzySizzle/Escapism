@@ -28,6 +28,9 @@ public class Puzzle_Seven_Controller : Puzzle
     {
         base.OnRestart();
 
+        // Reset the puzzle text
+        puzzleText.text = "";
+
         // Generate a random number within the bounds of possible messages
         int randomNum = Random.Range(0, possibleMessages.Length);
 

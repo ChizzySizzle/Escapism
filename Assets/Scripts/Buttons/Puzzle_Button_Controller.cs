@@ -1,11 +1,13 @@
 
 public class Puzzle_Button_Controller : ButtonClass
 {
+    // 
     public PuzzleRoom currentRoom;
 
     public override void Start()
     {
         base.Start();
+        // Cut the buttons alpha
         CutAlpha();
     }
 

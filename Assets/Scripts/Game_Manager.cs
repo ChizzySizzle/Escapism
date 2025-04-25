@@ -162,6 +162,7 @@ public class Game_Manager : MonoBehaviour
     // Load the game over scene when the player loses
     void GameOver() {
         SceneManager.LoadScene("GameOver");
+        Destroy(gameObject);
     }
 
     // Coroutine to gradually decrease the overlay alpha when the player starts / restarts
@@ -197,12 +198,13 @@ public class Game_Manager : MonoBehaviour
 
         // If the string passed is restart, call the game lost method
         if (nextMethod == "Restart") {
-
             GameLost();
         }
         // If the string passed is Win, load the win screen for the first ending
         else if (nextMethod == "Win") {
             SceneManager.LoadScene("Ending_1");
+            Destroy(gameObject);
+
         }
         // Log and error if the string passed to the argument is not valid
         else {
