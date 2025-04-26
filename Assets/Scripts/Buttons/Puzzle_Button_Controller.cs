@@ -1,9 +1,6 @@
 
 public class Puzzle_Button_Controller : ButtonClass
 {
-    // 
-    public PuzzleRoom currentRoom;
-
     public override void Start()
     {
         base.Start();
@@ -11,12 +8,9 @@ public class Puzzle_Button_Controller : ButtonClass
         CutAlpha();
     }
 
-    public void SetRoom(PuzzleRoom puzzleRoom) {
-        currentRoom = puzzleRoom;
-    }
-
     public override void OnButtonClick() {
         base.OnButtonClick();
-        Puzzle_Manager.instance.GetRoomPuzzle(currentRoom);
+        // Tell the puzzle manager to display the puzzle corresponding to the current room
+        Puzzle_Manager.instance.GetRoomPuzzle((PuzzleRoom)Navigation_Manager.instance.currentRoom);
     }
 }

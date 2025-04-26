@@ -93,7 +93,6 @@ public class Navigation_Manager : MonoBehaviour
             // Turn on the puzzle number text and set the text to the 
             puzzleNumberText.SetActive(true);
             puzzleNumberText.GetComponent<TMP_Text>().text = puzzleRoom.roomPuzzleNum.ToString();
-            puzzleButton.GetComponent<Puzzle_Button_Controller>().SetRoom(puzzleRoom);
         }
         // If the new room is not a puzzle room, make sure that the puzzle room objects are inactive
         else {

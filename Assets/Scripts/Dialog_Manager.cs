@@ -83,10 +83,15 @@ public class Dialog_Manager : MonoBehaviour
             // Create a formatted string that replaces payer or last message placeholders
             string DialogFormatted = currentDialog.dialogMessage.Replace("{player}", playerName).Replace("{message}", lastMessage);
 
+            // Set any active dialog buttons inactive
+            foreach (Button button in dialogButtons) {
+                button.gameObject.SetActive(false);
+            }
+
             // If the current dialog has choices
             if (currentDialog.dialogChoices.Length > 0) {
                 bool anyLeft = false;
-                // For every dialog choice, if any have been used, set any used variable to true
+                // For every dialog choice, if any have been used, set any left variable to true
                 foreach (var choice in currentDialog.dialogChoices) {
                     if (!choice.beenUsed)
                         anyLeft = true;
@@ -94,12 +99,7 @@ public class Dialog_Manager : MonoBehaviour
                 // If there are none left, progress the dialog
                 if (!anyLeft) {
                     DisplayDialog(currentDialog.nextDialog);
-                }
-            }
-            // If there are no dialog options, set the buttons ina
-            else {
-                foreach (Button button in dialogButtons) {
-                    button.gameObject.SetActive(false);
+                    return;
                 }
             }
             // Start the coroutine that types the dialog out, using the formatted dialog
@@ -147,8 +147,6 @@ public class Dialog_Manager : MonoBehaviour
 
     // Function to display dialog options for the current dialog
     void ShowDiaologOptions(Dialog_Message optionDialog) {
-        // Create a variable to keep track of if any options are shown
-        bool anyShown = false;
 
         // Iterate through all of the options in the dialog options array
         for (int i = 0; i < optionDialog.dialogChoices.Length; i++) {
@@ -172,18 +170,13 @@ public class Dialog_Manager : MonoBehaviour
                 }
 
                 // If the show option variable is still true, Set the button active, update the buttons text
-                // Then set the buttons choice to the current one and set the any shown variable to true
+                // Then set the buttons choice to the current one
                 if (showOption) {
                     dialogButtons[i].gameObject.SetActive(true);
                     dialogButtons[i].GetComponentInChildren<TMP_Text>().text = optionDialog.dialogChoices[i].choiceText;
                     dialogButtons[i].GetComponent<Dialog_Button_Controller>().choice = optionDialog.dialogChoices[i];
-                    anyShown = true;
                 }
             }
-        }
-        // If there were not any options shown and there is dialog following the current, set the message as full
-        if (!anyShown && currentDialog.nextDialog == null) {
-            messageFull = true;
         }
     }
 

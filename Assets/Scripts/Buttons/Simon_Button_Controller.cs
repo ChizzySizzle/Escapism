@@ -17,7 +17,7 @@ public class Simon_Button_Controller : ButtonClass
         base.OnButtonClick();
         // Play the button pressed audio
         Game_Manager.instance.audioSource.PlayOneShot(Puzzle_Manager.instance.buttonPressed);
-        // Send the current buttons number to puzzle two
+        // Send the current buttons number to the puzzle two controller
         puzzleTwo.AddInput(buttonNum);
     }
 }
