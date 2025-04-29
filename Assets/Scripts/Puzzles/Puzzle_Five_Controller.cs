@@ -80,28 +80,36 @@ public class Puzzle_Five_Controller : Puzzle
         }
     }
 
+    // Called when player presses the submit button
     public void SubmitInput() {
+        // Pass the current player input into the get input method
         GetInput(playerInput);
-        Debug.Log(playerInput);
-        Debug.Log(keyString);
     }
 
+    // Take in the players input and check it
     public void GetInput(string input) {
         if (CheckInput(input) == false) {
+            // if the input is false, set the status text to display incorrect message
+            puzzleStatus.text = "Incorrect, Try again";
         }
     }
 
+    // Call when the puzzle is successfully completed
     public override void PuzzleCompleted()
     {
+        // End the puzzle and call the parent puzzle complete method
         EndPuzzle();
         base.PuzzleCompleted();
     }
 
+    // Call to leave the puzzle
     public override void EndPuzzle() {
+        // Turn off every scrollbar and set there values back to zero
         for (int i = 0; i < scrollbars.Length; i++) {
             scrollbars[i].value = 0;
             scrollbars[i].gameObject.SetActive(false);
         }
+        // Turn off the submit button
         submitButton.gameObject.SetActive(false);
         base.EndPuzzle();
     }
