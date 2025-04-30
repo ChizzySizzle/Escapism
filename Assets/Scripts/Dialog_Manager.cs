@@ -64,6 +64,9 @@ public class Dialog_Manager : MonoBehaviour
     void OnRestart() {
         // Set a default player name
         playerName = "player";
+        // Reset runtime variables to avoid dialog softlock
+        gettingName = false;
+        messageFull = true;
         // Set the current dialog to the beginning dialog
         currentDialog = startDialog;
 
