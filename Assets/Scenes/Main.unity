@@ -5147,8 +5147,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   beginAudio: {fileID: 8300000, guid: 755a14f76c23c8b499985dd47ef45f15, type: 3}
   backgroundMusic: {fileID: 8300000, guid: e6c422c1b2d0fbf4184bc378d7b32c7e, type: 3}
-  timerStartAmount: 0.3
-  probability: 3
+  timerStartAmount: 5
+  probability: 10
 --- !u!82 &910639644
 AudioSource:
   m_ObjectHideFlags: 0
