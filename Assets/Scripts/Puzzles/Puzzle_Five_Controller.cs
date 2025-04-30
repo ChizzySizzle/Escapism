@@ -1,3 +1,9 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Puzzle five consists of five scrollbars which must be put into the correct position for the puzzle to complete
+/// The answer number is randomized each reset.
+/// 
 
 using TMPro;
 using UnityEngine;

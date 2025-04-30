@@ -1,3 +1,9 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// This object represents the choices the player is able to make, and holds possible requirements needed to make the choices
+/// Also tracks if a choice has been used yet and if the choice is repeatable
+/// 
 
 using UnityEngine;
 

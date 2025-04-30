@@ -1,3 +1,8 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// This is a child of the room object, meant to store puzzle room specific data
+/// 
 
 using UnityEngine;
 

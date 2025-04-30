@@ -1,3 +1,10 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// The game manager controls the games state, keeps track of resets, controls the time remaining, and handles the restart event
+/// It also handles win/lose state and scene management
+/// There is a fun probability value that will currently yield 3 possible easter eggs
+/// 
 
 using TMPro;
 using UnityEngine;

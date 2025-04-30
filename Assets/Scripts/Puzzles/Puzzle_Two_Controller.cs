@@ -1,3 +1,9 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Puzzle two requieres the player to brute force their way through a simon-says esc button setup.
+/// The answer number is randomized each reset.
+/// 
 
 using UnityEngine;
 using UnityEngine.UI;

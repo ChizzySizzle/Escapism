@@ -1,3 +1,9 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Puzzle one requires the player to spot a hidden four-digit number in puzzle room two.
+/// The answer number is randomized each reset.
+/// 
 
 using UnityEngine;
 using TMPro;

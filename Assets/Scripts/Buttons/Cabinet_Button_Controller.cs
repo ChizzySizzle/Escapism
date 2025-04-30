@@ -1,3 +1,8 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Button tat represents cabinets/lockboxes. Communicates with the cabinet manager.
+/// 
 
 public class Cabinet_Button_Controller : ButtonClass
 {  

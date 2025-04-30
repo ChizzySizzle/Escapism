@@ -1,3 +1,9 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Puzzle six requires the player to recreate the map using a rotating grid of puzzle pieces.
+/// The puzzle pieces are randomized each reset.
+/// 
 
 using UnityEngine;
 using System.Collections.Generic;

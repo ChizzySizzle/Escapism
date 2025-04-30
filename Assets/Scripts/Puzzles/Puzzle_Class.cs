@@ -1,3 +1,8 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// This is a base class for all puzzles to inherit from. provides puzzle numbers, input check, begin, end, and completion methods
+/// 
 
 using TMPro;
 using UnityEngine;

@@ -1,3 +1,9 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// The puzzle manager handles all higher level puzzle logic, individual puzzles communicate with the manager
+/// The manager tracks the puzzles completed, puzzle related dialog requirements, and loads the correct puzzle for each room
+/// 
 
 using System.Collections.Generic;
 using UnityEngine;

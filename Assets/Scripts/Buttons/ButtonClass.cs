@@ -1,3 +1,9 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Class that all buttons inherit from
+/// Provides helpful methods that the buttons can inherit/utiize
+/// 
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +23,7 @@ public class ButtonClass : MonoBehaviour
     }
 
     // Method for children to cut the alpha out of the button if needed
+    // Found this technique on a youtibe video
     protected void CutAlpha() {
         // Only let the player click on non transparent parts of the button
         gameObject.GetComponent<Image>().alphaHitTestMinimumThreshold = 0.1f;

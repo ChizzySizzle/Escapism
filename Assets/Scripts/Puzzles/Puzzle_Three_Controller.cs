@@ -1,3 +1,9 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Puzzle three requires the player to complete a systems of equations math problem.
+/// The answer number and variable/constants are randomized each reset.
+/// 
 
 using UnityEngine;
 using TMPro;

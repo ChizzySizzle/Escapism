@@ -1,3 +1,10 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Puzzle seven requires the player to have all other puzzles completed.
+/// When the player is ready, a dialog option will be available and chizzy will provide the player with a random code word(s).
+/// The code word is randomized each reset.
+/// 
 
 using TMPro;
 using UnityEngine;

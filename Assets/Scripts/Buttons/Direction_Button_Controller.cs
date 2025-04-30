@@ -1,3 +1,8 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Used to move between rooms, communicates with the navigation manager
+/// 
 
 public class Direction_Button_Controller : ButtonClass
 {

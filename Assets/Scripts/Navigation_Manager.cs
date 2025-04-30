@@ -23,7 +23,7 @@ public class Navigation_Manager : MonoBehaviour
     public GameObject chizzyButton;
     [Header("Puzzle Objects")]
     public GameObject puzzleButton;
-    public GameObject puzzleNumberText;
+    public TMP_Text puzzleNumberText;
     [Header("Direction Buttons")]
     public GameObject forwardButton;
     public GameObject rightButton;
@@ -91,15 +91,15 @@ public class Navigation_Manager : MonoBehaviour
             puzzleOneNumber.SetActive(puzzleRoom.hasPuzzleOneNum);
             puzzleFiveNumber.SetActive(puzzleRoom.hasPuzzleFiveNum);
             // Turn on the puzzle number text and set the text to the 
-            puzzleNumberText.SetActive(true);
-            puzzleNumberText.GetComponent<TMP_Text>().text = puzzleRoom.roomPuzzleNum.ToString();
+            puzzleNumberText.enabled = true;
+            puzzleNumberText.text = puzzleRoom.roomPuzzleNum.ToString();
         }
         // If the new room is not a puzzle room, make sure that the puzzle room objects are inactive
         else {
             puzzleButton.SetActive(false);
             puzzleOneNumber.SetActive(false);
             puzzleFiveNumber.SetActive(false);
-            puzzleNumberText.SetActive(false);
+            puzzleNumberText.enabled = false;
         }
 
         // If the new room is the dialog room, start the dialog script

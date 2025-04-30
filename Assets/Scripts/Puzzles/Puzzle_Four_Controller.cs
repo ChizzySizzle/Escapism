@@ -1,3 +1,10 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Puzzle four requires the player to find a hidden code within cabinets spread across the map.
+/// Once found the puzzle will provide the player with the answer code.
+/// The answer number is randomized each reset.
+/// 
 
 using System.Collections;
 using TMPro;

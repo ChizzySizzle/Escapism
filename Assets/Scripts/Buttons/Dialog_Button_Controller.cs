@@ -1,3 +1,8 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Represents a dialog choice for the player to select, communicates with the dialog manager.
+/// 
 
 public class Dialog_Button_Controller : ButtonClass
 {

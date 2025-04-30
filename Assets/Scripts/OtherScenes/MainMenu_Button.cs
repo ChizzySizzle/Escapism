@@ -1,3 +1,9 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Button to take the player back to the title screen
+/// 
+
 using UnityEngine.SceneManagement;
 
 public class MainMenu_Button : ButtonClass

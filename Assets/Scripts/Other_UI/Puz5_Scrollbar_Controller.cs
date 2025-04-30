@@ -1,3 +1,8 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Control the scrollbars used in puzzle five, sends data to the puzzle five controller.
+/// 
 
 using UnityEngine;
 using UnityEngine.UI;

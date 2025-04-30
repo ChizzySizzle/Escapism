@@ -1,3 +1,8 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Buttons used in puzzle two, send input to the puzzle controller.
+/// 
 
 public class Simon_Button_Controller : ButtonClass
 {

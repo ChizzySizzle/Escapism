@@ -1,3 +1,8 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// Puzzle piece buttons used in puzzle six, the map puzzle. Communicate with the puzzle controller
+/// 
 
 using UnityEngine;
 

@@ -4292,7 +4292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &780094323
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4994,7 +4994,7 @@ MonoBehaviour:
   tharacia: {fileID: 1461422960}
   chizzyButton: {fileID: 795636448}
   puzzleButton: {fileID: 550002969}
-  puzzleNumberText: {fileID: 780094322}
+  puzzleNumberText: {fileID: 780094324}
   forwardButton: {fileID: 278638569}
   rightButton: {fileID: 245896911}
   backButton: {fileID: 556577447}
@@ -5147,7 +5147,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   beginAudio: {fileID: 8300000, guid: 755a14f76c23c8b499985dd47ef45f15, type: 3}
   backgroundMusic: {fileID: 8300000, guid: e6c422c1b2d0fbf4184bc378d7b32c7e, type: 3}
-  timerStartAmount: 5
+  timerStartAmount: 0.3
   probability: 10
 --- !u!82 &910639644
 AudioSource:
@@ -5827,7 +5827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &983731887
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5854,7 +5854,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983731886}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -9513,7 +9513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1730478316
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9544,7 +9544,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730478315}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

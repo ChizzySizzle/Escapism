@@ -1,3 +1,10 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// The cabinet manager acts as the middle man between the cabinets and the puzzle four controller
+/// It is responsible for placing the key and code into the cabinets, and storing the players "inventory" status
+/// It is also responsible for displaying the text to the player when they press a cabinet button
+/// 
 
 using UnityEngine;
 

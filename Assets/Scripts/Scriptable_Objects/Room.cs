@@ -1,3 +1,8 @@
+///
+/// Gabriel Heiser
+/// 4/29/25
+/// This provides a scriptable object to store room data for all non-puzzle rooms
+/// 
 
 using UnityEngine;
 

@@ -1,3 +1,15 @@
+/// 
+/// Gabriel Heiser
+/// 4/29/25
+/// The dialog manager handles all things dialog, including the UI elements and player input
+/// Actual messages, choices, and requirements are handled by their corresponding scriptable objects
+/// This script utilizes those dialog objects to construct a branching and fleshed out conversation with chizzy
+/// 
+/// Full transparency:
+/// Originally used dictionary and file loading to accomplish dialog, did not allow me player options
+/// Conversated with AI to imagine what a system using scriptable objects for dialog might look like
+/// Never asked for direct code or copy/pasted from AI, all code is entirely my own
+/// 
 
 using System.Collections;
 using System.Collections.Generic;
@@ -183,9 +195,10 @@ public class Dialog_Manager : MonoBehaviour
     // Called to begin the dialog interaction
     public void BeginDialog() {
         // Set the chizzy image active
-        chizzyImage.gameObject.SetActive(true);
+        chizzyImage.enabled = true;
         // Set the dialog box active
-        dialogBox.gameObject.SetActive(true);
+        dialogBox.enabled = true;
+        dialogText.enabled = true;
 
         // Display the current dialog
         DisplayDialog(currentDialog);
@@ -196,9 +209,16 @@ public class Dialog_Manager : MonoBehaviour
         // Stop any running dialog coroutines
         StopAllCoroutines();
         // Set all of the dialog UI elements inactive
-        chizzyImage.gameObject.SetActive(false);
-        dialogBox.gameObject.SetActive(false);
+        chizzyImage.enabled = false;
+        dialogBox.enabled = false;
+        dialogText.enabled = false;
         userInput.gameObject.SetActive(false);
+        // If the current dialog is displaying options, turn them off as well
+        if (currentDialog.dialogChoices.Length > 0) {
+            foreach (Button button in dialogButtons) {
+                button.gameObject.SetActive(false);
+            }
+        }
         // Switch the player back to the start room
         Navigation_Manager.instance.GoToStart();
     }
