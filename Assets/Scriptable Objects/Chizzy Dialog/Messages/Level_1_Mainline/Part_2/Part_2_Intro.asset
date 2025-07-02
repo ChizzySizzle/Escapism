@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045a40df3f38ab44586b9b9d00a69f67, type: 3}
+  m_Name: Part_2_Intro
+  m_EditorClassIdentifier: 
+  dialogMessage: Have you gotten any puzzles done?
+  dialogChoices:
+  - {fileID: 11400000, guid: b8e0acfd6ac86ae4880d24f298a3f393, type: 2}
+  - {fileID: 11400000, guid: 03db53bac21836747a9ab0366c70f438, type: 2}
+  nextDialog: {fileID: 0}
+  emote: 0
+  isStart: 1
+  isMainlineDialog: 1
+  pickupLastMessage: 0

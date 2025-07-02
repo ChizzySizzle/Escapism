@@ -1,0 +1,818 @@
+fileFormatVersion: 2
+guid: 29bb0a617cf9af144ac65933b6d80a8d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5670
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d792e9cc23773e498036eb2f52340d7
+      internalID: 1713667742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 5670
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e014fe922b0264e869ac2a1477f1f8
+      internalID: 1232322457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 5670
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 047badf7a1677df47a1a76b4fce0ab1c
+      internalID: -2062908674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 5670
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e7f33288d9dfe4fa3dd469094a68ce
+      internalID: -1248442936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4860
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f1eee9e33224c4cabf9d45f0e65045
+      internalID: -597568557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 4860
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 049e74e0cd490c842a0c4ccd964eb191
+      internalID: -2142050913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 4860
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a03487ade31c440b6601808359c96e
+      internalID: -454672649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 4860
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3557a1803299a343b3555bdd21bef4a
+      internalID: 1622903977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4050
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83433a91cd2aea343b75ba16841c24e4
+      internalID: -770922733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 4050
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a53017f9f6f8424194a6f4443ae8a9b
+      internalID: 1219634789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 4050
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed20bb9bb5885074ea5437abf6fbdff1
+      internalID: 869751428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 4050
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503dbdcdad84df644a5317c64ae45e3c
+      internalID: 1773331995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3240
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce4b06c00d85dd40967c406e4789b18
+      internalID: 1751632544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 3240
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294c39469422d124ab6f05d96113f429
+      internalID: 1794782543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 3240
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c11ea21dbe7b4f4c94d902187a09080
+      internalID: 1746767479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 3240
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34345d9aaeaa6be459a2c4d6ec25ffb1
+      internalID: -1150423230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2430
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5802c70615fa625419f985e570a61476
+      internalID: -1920828214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 2430
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541326e6ca6147540adcd0acff2ac7c3
+      internalID: 1215053482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 2430
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f3e1195068e72b4783c91d63db1179b
+      internalID: 1400179648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 2430
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426ab90fc0346fd47bbc41e6d689b409
+      internalID: 474701294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1620
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76adc464e783f154399345509ea34154
+      internalID: 13669379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1620
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a12e6fc132012d941818e12dbd0e79aa
+      internalID: 646716247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1620
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d36b308ae359fbd4d9856de44929b937
+      internalID: -1764650054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1620
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13af5d2aac39a524d90ab712653f1ef3
+      internalID: 1899325832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 810
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d2baffe1a799294abdeed22742ddffa
+      internalID: 1492572788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 810
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec2ab9c639637949b1ef406f0cab2e2
+      internalID: 1096504671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 810
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e57e87b11c032d4798c0e28737a2ad3
+      internalID: -1331565502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 810
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df04cbd3e924e2149afd98fd03a74337
+      internalID: -1663444806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a92d4aa6228e7409fa29f94a5e79b6
+      internalID: 929326267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe5e86c256f9a3439d89c6b35ab6176
+      internalID: -922134539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a3000370409f747b9575383e13f50f
+      internalID: -160985523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confused_Sprite_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 0
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52d9dcd1e44998942ad89a9f8901019f
+      internalID: -2129431723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Confused_Sprite_Sheet_0: 1713667742
+      Confused_Sprite_Sheet_1: 1232322457
+      Confused_Sprite_Sheet_10: 869751428
+      Confused_Sprite_Sheet_11: 1773331995
+      Confused_Sprite_Sheet_12: 1751632544
+      Confused_Sprite_Sheet_13: 1794782543
+      Confused_Sprite_Sheet_14: 1746767479
+      Confused_Sprite_Sheet_15: -1150423230
+      Confused_Sprite_Sheet_16: -1920828214
+      Confused_Sprite_Sheet_17: 1215053482
+      Confused_Sprite_Sheet_18: 1400179648
+      Confused_Sprite_Sheet_19: 474701294
+      Confused_Sprite_Sheet_2: -2062908674
+      Confused_Sprite_Sheet_20: 13669379
+      Confused_Sprite_Sheet_21: 646716247
+      Confused_Sprite_Sheet_22: -1764650054
+      Confused_Sprite_Sheet_23: 1899325832
+      Confused_Sprite_Sheet_24: 1492572788
+      Confused_Sprite_Sheet_25: 1096504671
+      Confused_Sprite_Sheet_26: -1331565502
+      Confused_Sprite_Sheet_27: -1663444806
+      Confused_Sprite_Sheet_28: 929326267
+      Confused_Sprite_Sheet_29: -922134539
+      Confused_Sprite_Sheet_3: -1248442936
+      Confused_Sprite_Sheet_30: -160985523
+      Confused_Sprite_Sheet_31: -2129431723
+      Confused_Sprite_Sheet_4: -597568557
+      Confused_Sprite_Sheet_5: -2142050913
+      Confused_Sprite_Sheet_6: -454672649
+      Confused_Sprite_Sheet_7: 1622903977
+      Confused_Sprite_Sheet_8: -770922733
+      Confused_Sprite_Sheet_9: 1219634789
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

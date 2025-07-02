@@ -14,8 +14,9 @@ public class Dialog_Message : ScriptableObject {
     public Dialog_Choice[] dialogChoices;
     // The dialog following the current message
     public Dialog_Message nextDialog;
-    // Chizzy's emotion for this message
-    public Sprite emotion;
+    // Emotion for this message
+    public enum Emotion { idle, concerned, laugh, confused, smug, sad };
+    public Emotion emote;
     // Marker to close out dialog if the end of the conversation has been reached
-    public bool isEnd;
+    public bool isStart;
 }

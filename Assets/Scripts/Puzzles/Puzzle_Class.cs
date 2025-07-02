@@ -24,7 +24,7 @@ public class Puzzle : MonoBehaviour
 
     // For game start
     public virtual void Start() {
-        Game_Manager.instance.onRestart += OnRestart;
+        
     }
 
     // For every set/reset of the game
@@ -38,7 +38,7 @@ public class Puzzle : MonoBehaviour
         puzzleStatus.gameObject.SetActive(true);
         puzzleStatus.text = "";
         // play puzzle opened sound
-        Game_Manager.instance.audioSource.PlayOneShot(Puzzle_Manager.instance.puzzleOpened);
+        Game_Manager.instance.effectSource.PlayOneShot(Puzzle_Manager.instance.puzzleOpened);
     }
 
     // Check if the players input is equal to the answer key
@@ -50,7 +50,7 @@ public class Puzzle : MonoBehaviour
         }
         // is it is not correct, return that the input was false and play incorrect sound
         else {
-            Game_Manager.instance.audioSource.PlayOneShot(Puzzle_Manager.instance.puzzleIncorrect);
+            Game_Manager.instance.effectSource.PlayOneShot(Puzzle_Manager.instance.puzzleIncorrect);
             return false;
         }
     }

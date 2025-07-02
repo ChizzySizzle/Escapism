@@ -1,0 +1,1082 @@
+fileFormatVersion: 2
+guid: 1a809ea357857844aba9b954b60be8aa
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8100
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f63c776e043914ab713fb492d930b0
+      internalID: -656902611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 8100
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75f80aefada46a4299efe588c604b7b
+      internalID: -97435212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 8100
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e27b68f7ea8cb14ea4675adca5856c4
+      internalID: -506918969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 8100
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be21d3e703e2e1d488107615494a16e5
+      internalID: -1224191733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7290
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48931a75be2f4bd4c85c7fa1bd9bd024
+      internalID: -563366648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 7290
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb9378a03c49ff4c8aba41fd8ef1ded
+      internalID: 1279163584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 7290
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6437a2f819e391f4c826de4a50035ed4
+      internalID: 1488737686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 7290
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe87c1b99a65072449c444031338b21e
+      internalID: -825807313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6480
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47cabc2af03037e45b01054ce5f24db5
+      internalID: 1709098316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 6480
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b77233c8d0aa004282ab63d4a7efc83
+      internalID: 963475608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 6480
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a94f07da48fe8c4aa3245f74c08da3b
+      internalID: -1905552148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 6480
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc346e1d402c2e5459b33f607efd06e2
+      internalID: -1427126645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5670
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da9dc61c1308d44fbc7e80260303de0
+      internalID: 936904105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 5670
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbddcbbb1058a0a499dfd40706832ae6
+      internalID: -1708799597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 5670
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a32a7685b982a4f928a08952f729d6
+      internalID: -1354025570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 5670
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489d81e2aa8959d48a4f981813d3fc0f
+      internalID: 965398375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4860
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92bdd393b0f847478a5980dc2a63b7f
+      internalID: 815924627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 4860
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11eaf4dc737392c42843817f320725fd
+      internalID: 159259203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 4860
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5656718a33221874bac77474ddfcbf80
+      internalID: -504074352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 4860
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219be2b1813017c4b912f2c2b2f8a85e
+      internalID: 1081702454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4050
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c18904e8f72d1ac4280edb7c0a6a8866
+      internalID: -1210807471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 4050
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed032afe02f12bf45a4cefb333aa9668
+      internalID: -829396292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 4050
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da71a211bced5043978fdcf28ef714a
+      internalID: 1464026718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 4050
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 753c51a3f66c3d64eb538f394a5d4550
+      internalID: -658452442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3240
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b4221cab9e1104891e973c3fe359b7
+      internalID: -1678030870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 3240
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba880331bc9881445ab7fb62416d64e0
+      internalID: 2078454761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 3240
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131ebb8ac779df44e96df8523dbd827d
+      internalID: 1882973988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 3240
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce719be5e01d2f488faf38c8bc49101
+      internalID: 489314517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2430
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d08c35f3685ab0c41abfdc23f8cfb497
+      internalID: 2028368725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 2430
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9524f25c77f968e43ae3c0e8e3c7cdcc
+      internalID: 841499627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 2430
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 165648d3059459240a9bb45ef6ce30a8
+      internalID: -24257270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 2430
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc2c26e0bba76054ea58f76d50cf8f78
+      internalID: 1920613499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1620
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1affe88a2a4f64f87f842b757c21d1
+      internalID: 1552653557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1620
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844e1206aaf29194ab477bfbf814afc4
+      internalID: -960756049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1620
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d78ee827de8332541868d5f6d1747056
+      internalID: -545927300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1620
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e2e5fbabfffd246af0e3d8df95b12a
+      internalID: 2001678818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 810
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7786ce96dfc52114594ef929a9175045
+      internalID: -361692555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 810
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66c2be87ba84b8a44b9d45e7c06d9c63
+      internalID: 1036566269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 810
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11df846d392429a4bab46c325a807b04
+      internalID: -1204688612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 810
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0826d3a4d6c7c44ea9716cbdc458d04
+      internalID: 1228755337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4416b5e716fb2ee42a9b77602ead9db4
+      internalID: -1175326219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4158efe2696bfcf4c87b11ae8a64991a
+      internalID: 2140317958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0958566b19a3d40b56bb0fa43857d4
+      internalID: -233517873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smug_Sprite_Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 0
+        width: 1080
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4019503134264c746b55d87b23fda5db
+      internalID: -2127990357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Smug_Sprite_Sheet_0: -656902611
+      Smug_Sprite_Sheet_1: -97435212
+      Smug_Sprite_Sheet_10: -1905552148
+      Smug_Sprite_Sheet_11: -1427126645
+      Smug_Sprite_Sheet_12: 936904105
+      Smug_Sprite_Sheet_13: -1708799597
+      Smug_Sprite_Sheet_14: -1354025570
+      Smug_Sprite_Sheet_15: 965398375
+      Smug_Sprite_Sheet_16: 815924627
+      Smug_Sprite_Sheet_17: 159259203
+      Smug_Sprite_Sheet_18: -504074352
+      Smug_Sprite_Sheet_19: 1081702454
+      Smug_Sprite_Sheet_2: -506918969
+      Smug_Sprite_Sheet_20: -1210807471
+      Smug_Sprite_Sheet_21: -829396292
+      Smug_Sprite_Sheet_22: 1464026718
+      Smug_Sprite_Sheet_23: -658452442
+      Smug_Sprite_Sheet_24: -1678030870
+      Smug_Sprite_Sheet_25: 2078454761
+      Smug_Sprite_Sheet_26: 1882973988
+      Smug_Sprite_Sheet_27: 489314517
+      Smug_Sprite_Sheet_28: 2028368725
+      Smug_Sprite_Sheet_29: 841499627
+      Smug_Sprite_Sheet_3: -1224191733
+      Smug_Sprite_Sheet_30: -24257270
+      Smug_Sprite_Sheet_31: 1920613499
+      Smug_Sprite_Sheet_32: 1552653557
+      Smug_Sprite_Sheet_33: -960756049
+      Smug_Sprite_Sheet_34: -545927300
+      Smug_Sprite_Sheet_35: 2001678818
+      Smug_Sprite_Sheet_36: -361692555
+      Smug_Sprite_Sheet_37: 1036566269
+      Smug_Sprite_Sheet_38: -1204688612
+      Smug_Sprite_Sheet_39: 1228755337
+      Smug_Sprite_Sheet_4: -563366648
+      Smug_Sprite_Sheet_40: -1175326219
+      Smug_Sprite_Sheet_41: 2140317958
+      Smug_Sprite_Sheet_42: -233517873
+      Smug_Sprite_Sheet_43: -2127990357
+      Smug_Sprite_Sheet_5: 1279163584
+      Smug_Sprite_Sheet_6: 1488737686
+      Smug_Sprite_Sheet_7: -825807313
+      Smug_Sprite_Sheet_8: 1709098316
+      Smug_Sprite_Sheet_9: 963475608
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

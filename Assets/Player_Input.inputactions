@@ -40,7 +40,7 @@
                     "name": "",
                     "id": "dcd499a0-af78-4e2d-aaef-9a58a81ae529",
                     "path": "<Keyboard>/escape",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Escape",
